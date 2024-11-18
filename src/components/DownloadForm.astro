@@ -50,7 +50,7 @@ import beam from "../assets/beam-tripod.png";
                 <input
                   type="text"
                   id="name"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 valid:ring-green-500 valid:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:valid:ring-green-500 dark:valid:border-green-500"
                   required
                 />
               </div>
@@ -64,7 +64,7 @@ import beam from "../assets/beam-tripod.png";
                 <input
                   type="email"
                   id="email"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 valid:ring-green-500 valid:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:valid:ring-green-500 dark:valid:border-green-500"
                   placeholder="coach@bowman.com"
                   required
                 />
@@ -79,14 +79,13 @@ import beam from "../assets/beam-tripod.png";
                 <input
                   type="text"
                   id="sport"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 valid:ring-green-500 valid:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:valid:ring-green-500 dark:valid:border-green-500"
                   placeholder="Women's Gymnastics"
                   required
                 />
               </div>
               <button type="submit">
                 <a
-                  href="/download-form/"
                   class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
                   <span class="relative text-sm font-semibold text-white"
@@ -102,3 +101,14 @@ import beam from "../assets/beam-tripod.png";
     </div>
   </Container>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevent the default form submission behavior
+      window.open(downloadLink, "_blank"); // Open the link in a new tab
+    });
+  });
+</script>
