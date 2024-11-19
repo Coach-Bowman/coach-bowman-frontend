@@ -84,16 +84,29 @@ import beam from "../assets/beam-tripod.png";
                   required
                 />
               </div>
-              <button type="submit">
-                <a
+              <!-- Primary Button -->
+              <div class="flex flex-row justify-between">
+                <button
+                  id="primary-download"
+                  type="submit"
                   class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                >
+                  <span
+                    id="primary-download-span"
+                    class="relative text-sm font-semibold text-white"
+                    >Download now</span
+                  >
+                </button>
+                <button
+                  id="secondary-download"
+                  type="button"
+                  class="hidden relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
                   <span class="relative text-sm font-semibold text-white"
                     >Download now</span
                   >
-                </a>
-              </button>
-              <!-- Repeat for other sections -->
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -103,22 +116,26 @@ import beam from "../assets/beam-tripod.png";
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    let newWindow; // Declare outside to avoid reassignment issues.
-
-    const form = document.querySelector("form");
+    const form = document.querySelector("form") as HTMLFormElement;
+    const primaryDownloadButton = document.getElementById(
+      "primary-download",
+    ) as HTMLButtonElement;
+    const primaryDownloadButtonText = document.getElementById(
+      "primary-download-span",
+    ) as HTMLButtonElement;
+    const secondaryDownloadButton = document.getElementById(
+      "secondary-download",
+    ) as HTMLButtonElement;
     const apiUrl = import.meta.env.PUBLIC_API_KEY;
 
     form.addEventListener("submit", async (event) => {
-      event.preventDefault(); // Prevent default form submission behavior
-
-      // Open the new window here to avoid the browser blocking it
-      newWindow = window.open("", "_blank");
+      event.preventDefault(); // Prevent the default form submission behavior
 
       // Collect form data
       const formData = {
-        name: (form.querySelector("#name") as HTMLInputElement).value,
-        email: (form.querySelector("#email") as HTMLInputElement).value,
-        sport: (form.querySelector("#sport") as HTMLInputElement).value,
+        name: (document.getElementById("name") as HTMLInputElement).value,
+        email: (document.getElementById("email") as HTMLInputElement).value,
+        sport: (document.getElementById("sport") as HTMLInputElement).value,
       };
       console.log("Form data:", formData);
 
@@ -136,17 +153,29 @@ import beam from "../assets/beam-tripod.png";
           throw new Error(`Error: ${response.statusText}`);
         }
 
-        // On success, redirect the new window
+        // On success, show the secondary button and disable the primary button
+        primaryDownloadButton.disabled = true; // This works now
+        primaryDownloadButtonText.textContent = "Thank you!";
+        secondaryDownloadButton.classList.remove("hidden");
+        primaryDownloadButton.classList.remove("hover:before:scale-105");
+        primaryDownloadButton.classList.replace(
+          "before:bg-primary",
+          "before:bg-primary/10",
+        );
+        primaryDownloadButtonText.classList.replace(
+          "text-white",
+          "text-primary",
+        );
         console.log("Form submitted successfully!");
-        alert("Thank you for registering! Redirecting you to download...");
-        const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
-        newWindow.location.href = downloadLink;
       } catch (error) {
         console.error("Failed to submit the form:", error);
         alert("There was an error submitting the form. Please try again.");
-        // Optionally close the new window on error
-        if (newWindow) newWindow.close();
       }
+    });
+
+    // Add event listener for secondary button click
+    secondaryDownloadButton.addEventListener("click", () => {
+      window.open("https://testflight.apple.com/join/5XVCpmd8", "_blank");
     });
   });
 </script>
