@@ -105,7 +105,7 @@ import beam from "../assets/beam-tripod.png";
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     const apiUrl = import.meta.env.PUBLIC_API_KEY;
-    console.log("API URL:", apiUrl);
+    console.log(apiUrl);
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault(); // Prevent the default form submission behavior
@@ -128,20 +128,20 @@ import beam from "../assets/beam-tripod.png";
           body: JSON.stringify(formData),
         });
 
-        console.log("API Response:", response.status, response.statusText);
-
-        // Handle success based on the status code
-        if (response.ok) {
-          console.log("API call succeeded.");
-          alert(
-            "Thank you for registering! You will now be redirected to download.",
-          );
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-          const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
-          window.open(downloadLink, "_blank"); // Open the download link in a new tab
-        } else {
-          throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
         }
+
+        // Handle successful response
+        const data = await response.text();
+        console.log("Form submitted successfully:", data);
+
+        // Redirect or provide feedback
+        alert(
+          "Thank you for registering! You will now be redirected to download.",
+        );
+        const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
+        window.open(downloadLink, "_blank"); // Open the download link in a new tab
       } catch (error) {
         console.error("Failed to submit the form:", error);
         alert("There was an error submitting the form. Please try again.");
