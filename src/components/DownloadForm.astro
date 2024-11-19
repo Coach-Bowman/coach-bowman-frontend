@@ -112,9 +112,9 @@ import beam from "../assets/beam-tripod.png";
 
       // Collect form data
       const formData = {
-        name: (form.querySelector("#name") as HTMLInputElement).value,
-        email: (form.querySelector("#email") as HTMLInputElement).value,
-        sport: (form.querySelector("#sport") as HTMLInputElement).value,
+        error: (form.querySelector("#name") as HTMLInputElement).value,
+        baddata: (form.querySelector("#email") as HTMLInputElement).value,
+        oops: (form.querySelector("#sport") as HTMLInputElement).value,
       };
       console.log("Form data:", formData);
 
