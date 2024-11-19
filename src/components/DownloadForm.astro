@@ -130,25 +130,18 @@ import beam from "../assets/beam-tripod.png";
 
         console.log("API Response:", response.status, response.statusText);
 
-        // Check if the response is OK
-        if (!response.ok) {
+        // Handle success based on the status code
+        if (response.ok) {
+          console.log("API call succeeded.");
+          alert(
+            "Thank you for registering! You will now be redirected to download.",
+          );
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
+          window.open(downloadLink, "_blank"); // Open the download link in a new tab
+        } else {
           throw new Error(`Error: ${response.status} - ${response.statusText}`);
         }
-
-        // Log the response body only if it is not empty
-        const responseBody = await response.text();
-        if (responseBody) {
-          console.log("API Response Body:", responseBody);
-        } else {
-          console.log("API Response Body is empty.");
-        }
-
-        // Redirect or provide feedback
-        alert(
-          "Thank you for registering! You will now be redirected to download.",
-        );
-        const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
-        window.open(downloadLink, "_blank"); // Open the download link in a new tab
       } catch (error) {
         console.error("Failed to submit the form:", error);
         alert("There was an error submitting the form. Please try again.");
