@@ -116,6 +116,7 @@ import beam from "../assets/beam-tripod.png";
         email: (form.querySelector("#email") as HTMLInputElement).value,
         sport: (form.querySelector("#sport") as HTMLInputElement).value,
       };
+      console.log("Form data:", formData);
 
       try {
         // Submit form data to the API
@@ -127,35 +128,28 @@ import beam from "../assets/beam-tripod.png";
           body: JSON.stringify(formData),
         });
 
+        console.log("API Response:", response.status, response.statusText);
+        const responseBody = await response.text();
+        console.log("API Response Body:", responseBody);
+
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
+        } else {
+          // Handle successful response
+          const data = await response.json();
+          console.log("Form submitted successfully:", data);
+
+          // Redirect or provide feedback
+          alert(
+            "Thank you for registering! You will now be redirected to download.",
+          );
+          const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
+          window.open(downloadLink, "_blank"); // Open the download link in a new tab
         }
-
-        // Handle successful response
-        const data = await response.json();
-        console.log("Form submitted successfully:", data);
-
-        // Redirect or provide feedback
-        alert(
-          "Thank you for registering! You will now be redirected to download.",
-        );
-        const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
-        window.open(downloadLink, "_blank"); // Open the download link in a new tab
       } catch (error) {
         console.error("Failed to submit the form:", error);
         alert("There was an error submitting the form. Please try again.");
       }
-    });
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-    const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); // Prevent the default form submission behavior
-      window.open(downloadLink, "_blank"); // Open the link in a new tab
     });
   });
 </script>
