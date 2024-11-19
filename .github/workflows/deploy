@@ -67,6 +67,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
+        with:
+          PUBLIC_API_KEY: ${{ secrets.PUBLIC_API_KEY }}
+
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ steps.pages.outputs.origin }}" \
