@@ -85,26 +85,27 @@ import beam from "../assets/beam-tripod.png";
                 />
               </div>
               <!-- Primary Button -->
-              <div class="flex flex-row justify-between">
+              <div class="flex flex-col sm:flex-row justify-between">
                 <button
                   id="primary-download"
                   type="submit"
-                  class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                  class="relative flex h-9 w-full sm:w-auto items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
                   <span
                     id="primary-download-span"
                     class="relative text-sm font-semibold text-white"
-                    >Download now</span
                   >
+                    Download now
+                  </span>
                 </button>
                 <button
                   id="secondary-download"
                   type="button"
-                  class="hidden relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                  class="mt-2 hidden relative flex h-9 w-full sm:w-auto items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
-                  <span class="relative text-sm font-semibold text-white"
-                    >Download now</span
-                  >
+                  <span class="relative text-sm font-semibold text-white">
+                    Download now
+                  </span>
                 </button>
               </div>
             </form>
