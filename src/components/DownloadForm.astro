@@ -105,7 +105,6 @@ import beam from "../assets/beam-tripod.png";
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     const apiUrl = import.meta.env.PUBLIC_API_KEY;
-    console.log(apiUrl);
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault(); // Prevent the default form submission behavior
@@ -116,6 +115,7 @@ import beam from "../assets/beam-tripod.png";
         email: (form.querySelector("#email") as HTMLInputElement).value,
         sport: (form.querySelector("#sport") as HTMLInputElement).value,
       };
+
       console.log("Form data:", formData);
 
       try {
@@ -132,15 +132,14 @@ import beam from "../assets/beam-tripod.png";
           throw new Error(`Error: ${response.statusText}`);
         }
 
-        // Handle successful response
-        const data = await response.text();
-        console.log("Form submitted successfully:", data);
-
-        // Redirect or provide feedback
+        // Success! Redirect to the download link
+        console.log("Form submitted successfully!");
+        alert("Thank you for registering! Redirecting you to download...");
         const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
         window.open(downloadLink, "_blank"); // Open the download link in a new tab
       } catch (error) {
         console.error("Failed to submit the form:", error);
+        alert("There was an error submitting the form. Please try again.");
       }
     });
   });
