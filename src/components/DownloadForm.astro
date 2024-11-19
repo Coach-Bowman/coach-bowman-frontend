@@ -172,7 +172,13 @@ import beam from "../assets/beam-tripod.png";
         alert("There was an error submitting the form. Please try again.");
       }
     });
-
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const secondaryDownloadButton = document.getElementById(
+      "secondary-download",
+    ) as HTMLButtonElement;
     // Add event listener for secondary button click
     secondaryDownloadButton.addEventListener("click", () => {
       window.open("https://testflight.apple.com/join/5XVCpmd8", "_blank");
