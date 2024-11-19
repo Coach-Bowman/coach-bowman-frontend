@@ -112,9 +112,9 @@ import beam from "../assets/beam-tripod.png";
 
       // Collect form data
       const formData = {
-        error: (form.querySelector("#name") as HTMLInputElement).value,
-        baddata: (form.querySelector("#email") as HTMLInputElement).value,
-        oops: (form.querySelector("#sport") as HTMLInputElement).value,
+        name: (form.querySelector("#name") as HTMLInputElement).value,
+        email: (form.querySelector("#email") as HTMLInputElement).value,
+        sport: (form.querySelector("#sport") as HTMLInputElement).value,
       };
       console.log("Form data:", formData);
 
@@ -137,14 +137,10 @@ import beam from "../assets/beam-tripod.png";
         console.log("Form submitted successfully:", data);
 
         // Redirect or provide feedback
-        alert(
-          "Thank you for registering! You will now be redirected to download.",
-        );
         const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
         window.open(downloadLink, "_blank"); // Open the download link in a new tab
       } catch (error) {
         console.error("Failed to submit the form:", error);
-        alert("There was an error submitting the form. Please try again.");
       }
     });
   });
