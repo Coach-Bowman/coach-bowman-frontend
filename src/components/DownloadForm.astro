@@ -103,6 +103,8 @@ import beam from "../assets/beam-tripod.png";
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    const newWindow = window.open("", "_blank");
+
     const form = document.querySelector("form");
     const apiUrl = import.meta.env.PUBLIC_API_KEY;
 
@@ -134,12 +136,12 @@ import beam from "../assets/beam-tripod.png";
         // Success! Redirect to the download link
         console.log("Form submitted successfully!");
         alert("Thank you for registering! Redirecting you to download...");
+        const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
+        newWindow.location = downloadLink;
       } catch (error) {
         console.error("Failed to submit the form:", error);
         alert("There was an error submitting the form. Please try again.");
       }
-      const downloadLink = "https://testflight.apple.com/join/5XVCpmd8";
-      window.open(downloadLink, "_blank"); // Open the download link in a new tab
     });
   });
 </script>
