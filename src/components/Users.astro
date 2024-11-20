@@ -1,0 +1,130 @@
+---
+import Container from "./Container.astro";
+import beam from "../assets/beam-tripod.png";
+
+// Fetch users from the API during build time (SSR-friendly in Astro)
+const apiUrl = import.meta.env.PUBLIC_API_KEY;
+let users = [];
+
+try {
+  const response = await fetch(apiUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error: ${response.statusText}`);
+  }
+
+  users = await response.json();
+  // Format the createdAt date
+  users = users.map((user) => ({
+    ...user,
+    formattedDate: new Date(user.createdAt)
+      .toLocaleString("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      })
+      .replace(",", " at"), // Replace the comma between date and time with "at"
+  }));
+} catch (error) {
+  console.error("Failed to fetch users:", error);
+}
+---
+
+<div class="relative" id="home">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-30 dark:opacity-50"
+  >
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400">
+    </div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300">
+    </div>
+  </div>
+  <Container>
+    <div class="pt-10 ml-auto">
+      <section class="bg-white dark:bg-gray-900">
+        <div
+          class="relative py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6"
+        >
+          <div class="text-center mx-auto mb-8">
+            <h1
+              class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-6xl"
+            >
+              Users
+            </h1>
+            <p
+              class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300"
+            >
+              A list of users fetched from the API.
+            </p>
+          </div>
+          <!-- User Table -->
+          <div
+            class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-600/10 max-w-auto mx-auto"
+          >
+            {
+              users.length > 0 ? (
+                <div class="overflow-x-auto">
+                  <table class="table-auto w-full text-left text-gray-900 dark:text-gray-200">
+                    <thead>
+                      <tr>
+                        <th class="px-4 py-2 border-b dark:border-gray-700">
+                          ID
+                        </th>
+                        <th class="px-4 py-2 border-b dark:border-gray-700">
+                          Name
+                        </th>
+                        <th class="px-4 py-2 border-b dark:border-gray-700">
+                          Email
+                        </th>
+                        <th class="px-4 py-2 border-b dark:border-gray-700">
+                          Sport
+                        </th>
+                        <th class="px-4 py-2 border-b dark:border-gray-700">
+                          Date
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {users.map((user) => (
+                        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                          <td class="px-4 py-2 border-b dark:border-gray-700">
+                            {user.id}
+                          </td>
+                          <td class="px-4 py-2 border-b dark:border-gray-700">
+                            {user.name}
+                          </td>
+                          <td class="px-4 py-2 border-b dark:border-gray-700">
+                            {user.email}
+                          </td>
+                          <td class="px-4 py-2 border-b dark:border-gray-700">
+                            {user.sport}
+                          </td>
+                          <td class="px-4 py-2 border-b dark:border-gray-700">
+                            {user.formattedDate}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <p class="text-center text-gray-600 dark:text-gray-400">
+                  No users found.
+                </p>
+              )
+            }
+          </div>
+        </div>
+      </section>
+    </div>
+  </Container>
+</div>
