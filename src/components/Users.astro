@@ -33,6 +33,7 @@ try {
       })
       .replace(",", " at"), // Replace the comma between date and time with "at"
   }));
+  console.log("Fetched users:", users);
 } catch (error) {
   console.error("Failed to fetch users:", error);
 }
