@@ -1,14 +1,6 @@
 ---
 import Container from "./Container.astro";
 import beam from "../assets/beam-tripod.png";
-const baseUrl = import.meta.env.PUBLIC_BASE_URL || "http://localhost:3000";
-const response = await fetch(`${baseUrl}/api/users`);
-if (!response.ok) {
-  throw new Error(`HTTP error! status: ${response.status}`);
-}
-const users = await response.json();
-
-// Fetch users from the API during build time (SSR-friendly in Astro)
 ---
 
 <div class="relative" id="home">
@@ -43,61 +35,80 @@ const users = await response.json();
           <div
             class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-600/10 max-w-auto mx-auto"
           >
-            {
-              users.length > 0 ? (
-                <div class="overflow-x-auto">
-                  <table class="table-auto w-full text-left text-gray-900 dark:text-gray-200">
-                    <thead>
-                      <tr>
-                        <th class="px-4 py-2 border-b dark:border-gray-700">
-                          ID
-                        </th>
-                        <th class="px-4 py-2 border-b dark:border-gray-700">
-                          Name
-                        </th>
-                        <th class="px-4 py-2 border-b dark:border-gray-700">
-                          Email
-                        </th>
-                        <th class="px-4 py-2 border-b dark:border-gray-700">
-                          Sport
-                        </th>
-                        <th class="px-4 py-2 border-b dark:border-gray-700">
-                          Date
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {users.map((user) => (
-                        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                          <td class="px-4 py-2 border-b dark:border-gray-700">
-                            {user.id}
-                          </td>
-                          <td class="px-4 py-2 border-b dark:border-gray-700">
-                            {user.name}
-                          </td>
-                          <td class="px-4 py-2 border-b dark:border-gray-700">
-                            {user.email}
-                          </td>
-                          <td class="px-4 py-2 border-b dark:border-gray-700">
-                            {user.sport}
-                          </td>
-                          <td class="px-4 py-2 border-b dark:border-gray-700">
-                            {user.formattedDate}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              ) : (
-                <p class="text-center text-gray-600 dark:text-gray-400">
-                  No users found.
-                </p>
-              )
-            }
+            <div class="overflow-x-auto">
+              <table
+                class="table-auto w-full text-left text-gray-900 dark:text-gray-200"
+              >
+                <thead>
+                  <tr>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">ID</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Name</th
+                    >
+                    <th class="px-4 py-2 border-b dark:border-gray-700"
+                      >Email</th
+                    >
+                    <th class="px-4 py-2 border-b dark:border-gray-700"
+                      >Sport</th
+                    >
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Date</th
+                    >
+                  </tr>
+                </thead>
+                <tbody id="user-table-body">
+                  <!-- Rows will be dynamically populated here -->
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
     </div>
   </Container>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const tableBody = document.getElementById("user-table-body");
+    const apiUrl = "/api/users";
+
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const users = await response.json();
+      if (users.length > 0) {
+        users.forEach((user) => {
+          const row = document.createElement("tr");
+          row.className = "hover:bg-gray-100 dark:hover:bg-gray-700";
+          row.innerHTML = `
+            <td class="px-4 py-2 border-b dark:border-gray-700">${user.id}</td>
+            <td class="px-4 py-2 border-b dark:border-gray-700">${user.name}</td>
+            <td class="px-4 py-2 border-b dark:border-gray-700">${user.email}</td>
+            <td class="px-4 py-2 border-b dark:border-gray-700">${user.sport}</td>
+            <td class="px-4 py-2 border-b dark:border-gray-700">${user.formattedDate}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } else {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="5" class="text-center text-gray-600 dark:text-gray-400 py-4">
+              No users found.
+            </td>
+          </tr>
+        `;
+      }
+    } catch (error) {
+      tableBody.innerHTML = `
+        <tr>
+          <td colspan="5" class="text-center text-gray-600 dark:text-gray-400 py-4">
+            Failed to load users.
+          </td>
+        </tr>
+      `;
+      console.error(error);
+    }
+  });
+</script>
