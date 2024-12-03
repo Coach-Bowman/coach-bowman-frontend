@@ -66,8 +66,8 @@ import beam from "../assets/beam-tripod.png";
   </Container>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", async () => {
+<script type="module">
+  async function fetchUsers() {
     const tableBody = document.getElementById("user-table-body");
     const apiUrl = "/api/users";
 
@@ -79,18 +79,19 @@ import beam from "../assets/beam-tripod.png";
 
       const users = await response.json();
       if (users.length > 0) {
-        users.forEach((user) => {
-          const row = document.createElement("tr");
-          row.className = "hover:bg-gray-100 dark:hover:bg-gray-700";
-          row.innerHTML = `
-            <td class="px-4 py-2 border-b dark:border-gray-700">${user.id}</td>
-            <td class="px-4 py-2 border-b dark:border-gray-700">${user.name}</td>
-            <td class="px-4 py-2 border-b dark:border-gray-700">${user.email}</td>
-            <td class="px-4 py-2 border-b dark:border-gray-700">${user.sport}</td>
-            <td class="px-4 py-2 border-b dark:border-gray-700">${user.formattedDate}</td>
-          `;
-          tableBody.appendChild(row);
-        });
+        tableBody.innerHTML = users
+          .map(
+            (user) => `
+            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+              <td class="px-4 py-2 border-b dark:border-gray-700">${user.id}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${user.name}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${user.email}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${user.sport}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${user.formattedDate}</td>
+            </tr>
+          `,
+          )
+          .join("");
       } else {
         tableBody.innerHTML = `
           <tr>
@@ -110,5 +111,7 @@ import beam from "../assets/beam-tripod.png";
       `;
       console.error(error);
     }
-  });
+  }
+
+  document.addEventListener("DOMContentLoaded", fetchUsers);
 </script>
