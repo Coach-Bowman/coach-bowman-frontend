@@ -66,8 +66,8 @@ import beam from "../assets/beam-tripod.png";
   </Container>
 </div>
 
-<script is:inline>
-  async function fetchUsers() {
+<script client:load>
+    async function fetchUsers() {
     const tableBody = document.getElementById("user-table-body");
     const apiUrl = "/api/users";
 
