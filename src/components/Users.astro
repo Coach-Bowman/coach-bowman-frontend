@@ -1,6 +1,5 @@
 ---
 import Container from "./Container.astro";
-import beam from "../assets/beam-tripod.png";
 ---
 
 <div class="relative" id="home">
@@ -8,10 +7,8 @@ import beam from "../assets/beam-tripod.png";
     aria-hidden="true"
     class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-30 dark:opacity-50"
   >
-    <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400">
-    </div>
-    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300">
-    </div>
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400"></div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300"></div>
   </div>
   <Container>
     <div class="pt-10 ml-auto">
@@ -31,6 +28,15 @@ import beam from "../assets/beam-tripod.png";
               A list of users fetched from the API.
             </p>
           </div>
+          <!-- Fetch Button -->
+          <div class="text-center mb-6">
+            <button
+              onclick="fetchUsers()"
+              class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800"
+            >
+              Fetch Users
+            </button>
+          </div>
           <!-- User Table -->
           <div
             class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-600/10 max-w-auto mx-auto"
@@ -42,16 +48,10 @@ import beam from "../assets/beam-tripod.png";
                 <thead>
                   <tr>
                     <th class="px-4 py-2 border-b dark:border-gray-700">ID</th>
-                    <th class="px-4 py-2 border-b dark:border-gray-700">Name</th
-                    >
-                    <th class="px-4 py-2 border-b dark:border-gray-700"
-                      >Email</th
-                    >
-                    <th class="px-4 py-2 border-b dark:border-gray-700"
-                      >Sport</th
-                    >
-                    <th class="px-4 py-2 border-b dark:border-gray-700">Date</th
-                    >
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Name</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Email</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Sport</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Date</th>
                   </tr>
                 </thead>
                 <tbody id="user-table-body">
@@ -66,11 +66,12 @@ import beam from "../assets/beam-tripod.png";
   </Container>
 </div>
 
-<script client:load>
-    async function fetchUsers() {
+<script>
+  // Define fetchUsers and attach it to the global window object
+  window.fetchUsers = async function fetchUsers() {
     const tableBody = document.getElementById("user-table-body");
-    const apiUrl = "/api/users";
-
+    const apiUrl = "/api/users"; // Replace with your actual API endpoint
+    console.log("Fetching users from:", apiUrl);
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
@@ -111,7 +112,5 @@ import beam from "../assets/beam-tripod.png";
       `;
       console.error(error);
     }
-  }
-
-  document.addEventListener("DOMContentLoaded", fetchUsers);
+  };
 </script>
