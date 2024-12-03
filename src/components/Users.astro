@@ -1,42 +1,14 @@
 ---
 import Container from "./Container.astro";
 import beam from "../assets/beam-tripod.png";
+const baseUrl = import.meta.env.PUBLIC_BASE_URL || "http://localhost:3000";
+const response = await fetch(`${baseUrl}/api/users`);
+if (!response.ok) {
+  throw new Error(`HTTP error! status: ${response.status}`);
+}
+const users = await response.json();
 
 // Fetch users from the API during build time (SSR-friendly in Astro)
-const apiUrl = import.meta.env.PUBLIC_API_KEY;
-let users = [];
-
-try {
-  const response = await fetch(apiUrl, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Error: ${response.statusText}`);
-  }
-
-  users = await response.json();
-  // Format the createdAt date
-  users = users.map((user) => ({
-    ...user,
-    formattedDate: new Date(user.createdAt)
-      .toLocaleString("en-US", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      })
-      .replace(",", " at"), // Replace the comma between date and time with "at"
-  }));
-  console.log("Fetched users:", users);
-} catch (error) {
-  console.error("Failed to fetch users:", error);
-}
 ---
 
 <div class="relative" id="home">
