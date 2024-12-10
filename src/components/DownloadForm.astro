@@ -148,17 +148,17 @@ import beam from "../assets/beam-tripod.png";
 
       try {
         // Submit form data to the API
-        // const response = await fetch(apiUrl, {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(formData),
-        // });
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
 
-        // if (!response.ok) {
-        // throw new Error(`Error: ${response.statusText}`);
-        // }
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
 
         // On success, show the secondary button and disable the primary button
         primaryDownloadButton.disabled = true; // This works now
