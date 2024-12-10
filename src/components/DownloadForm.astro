@@ -95,16 +95,19 @@ import beam from "../assets/beam-tripod.png";
                     id="primary-download-span"
                     class="relative text-sm font-semibold text-white"
                   >
-                    Download now
+                    1. Submit info
                   </span>
                 </button>
                 <button
                   id="secondary-download"
-                  type="button"
-                  class="hidden relative flex h-9 w-full sm:w-auto items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                  type="submit"
+                  class="relative flex h-9 w-full sm:w-auto items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary/10 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
                 >
-                  <span class="relative text-sm font-semibold text-white">
-                    Download now
+                  <span
+                    id="secondary-download-span"
+                    class="relative text-sm font-semibold text-primary"
+                  >
+                    2. Download now
                   </span>
                 </button>
               </div>
@@ -127,6 +130,9 @@ import beam from "../assets/beam-tripod.png";
     const secondaryDownloadButton = document.getElementById(
       "secondary-download",
     ) as HTMLButtonElement;
+    const secondaryDownloadButtonText = document.getElementById(
+      "secondary-download-span",
+    ) as HTMLButtonElement;
     const apiUrl = import.meta.env.PUBLIC_API_KEY;
 
     form.addEventListener("submit", async (event) => {
@@ -142,23 +148,21 @@ import beam from "../assets/beam-tripod.png";
 
       try {
         // Submit form data to the API
-        const response = await fetch(apiUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+        // const response = await fetch(apiUrl, {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify(formData),
+        // });
 
-        if (!response.ok) {
-          throw new Error(`Error: ${response.statusText}`);
-        }
+        // if (!response.ok) {
+        // throw new Error(`Error: ${response.statusText}`);
+        // }
 
         // On success, show the secondary button and disable the primary button
         primaryDownloadButton.disabled = true; // This works now
-        primaryDownloadButtonText.textContent = "Thank you!";
-        secondaryDownloadButton.classList.remove("hidden");
-        primaryDownloadButton.classList.remove("hover:before:scale-105");
+        primaryDownloadButtonText.textContent = "1. Thank you!";
         primaryDownloadButton.classList.replace(
           "before:bg-primary",
           "before:bg-primary/10",
@@ -167,6 +171,23 @@ import beam from "../assets/beam-tripod.png";
           "text-white",
           "text-primary",
         );
+        secondaryDownloadButton.classList.replace(
+          "before:bg-primary/10",
+          "before:bg-primary",
+        );
+        secondaryDownloadButtonText.classList.replace(
+          "text-primary",
+          "text-white",
+        );
+
+        primaryDownloadButton.type = "button";
+        secondaryDownloadButton.type = "button";
+
+        // Add event listener for secondary button click
+
+        secondaryDownloadButton.addEventListener("click", () => {
+          window.open("https://testflight.apple.com/join/5XVCpmd8", "_blank");
+        });
         console.log("Form submitted successfully!");
       } catch (error) {
         console.error("Failed to submit the form:", error);
@@ -175,7 +196,7 @@ import beam from "../assets/beam-tripod.png";
     });
   });
 </script>
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", () => {
     const secondaryDownloadButton = document.getElementById(
       "secondary-download",
@@ -185,4 +206,4 @@ import beam from "../assets/beam-tripod.png";
       window.open("https://testflight.apple.com/join/5XVCpmd8", "_blank");
     });
   });
-</script>
+</script> -->
