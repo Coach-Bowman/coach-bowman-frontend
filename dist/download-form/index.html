@@ -9,61 +9,64 @@
     <title>Coach Bowman</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/download-form.b76027b7.css" /><script type="module">document.addEventListener("DOMContentLoaded",()=>{const r=document.querySelector("form"),t=document.getElementById("primary-download"),n=document.getElementById("primary-download-span"),o=document.getElementById("secondary-download"),s=document.getElementById("secondary-download-span"),d="https://coachbowman-backend-24wnt.ondigitalocean.app/api/v1/downloadformentry";r.addEventListener("submit",async l=>{l.preventDefault();const a={name:document.getElementById("name").value,email:document.getElementById("email").value,sport:document.getElementById("sport").value};console.log("Form data:",a);try{const e=await fetch(d,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(a)});if(!e.ok)throw new Error(`Error: ${e.statusText}`);t.disabled=!0,n.textContent="1. Thank you!",t.classList.replace("before:bg-primary","before:bg-primary/10"),n.classList.replace("text-white","text-primary"),o.classList.replace("before:bg-primary/10","before:bg-primary"),s.classList.replace("text-primary","text-white"),t.type="button",o.type="button",o.addEventListener("click",()=>{window.open("https://testflight.apple.com/join/5XVCpmd8","_blank")}),console.log("Form submitted successfully!")}catch(e){console.error("Failed to submit the form:",e),alert("There was an error submitting the form. Please try again.")}})});
+  <link rel="stylesheet" href="/assets/contests.f375be77.css" /><script type="module">document.addEventListener("DOMContentLoaded",()=>{const r=document.querySelector("form"),t=document.getElementById("primary-download"),n=document.getElementById("primary-download-span"),o=document.getElementById("secondary-download"),s=document.getElementById("secondary-download-span"),d="https://coachbowman-backend-24wnt.ondigitalocean.app/api/v1/downloadformentry";r.addEventListener("submit",async l=>{l.preventDefault();const a={name:document.getElementById("name").value,email:document.getElementById("email").value,sport:document.getElementById("sport").value};console.log("Form data:",a);try{const e=await fetch(d,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(a)});if(!e.ok)throw new Error(`Error: ${e.statusText}`);t.disabled=!0,n.textContent="1. Thank you!",t.classList.replace("before:bg-primary","before:bg-primary/10"),n.classList.replace("text-white","text-primary"),o.classList.replace("before:bg-primary/10","before:bg-primary"),s.classList.replace("text-primary","text-white"),t.type="button",o.type="button",o.addEventListener("click",()=>{window.open("https://testflight.apple.com/join/5XVCpmd8","_blank")}),console.log("Form submitted successfully!")}catch(e){console.error("Failed to submit the form:",e),alert("There was an error submitting the form. Please try again.")}})});
 </script></head>
   <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
-    <header class="astro-B2PV3EDZ">
-  <nav class="z-10 w-full absolute astro-B2PV3EDZ">
+    <header class="astro-GUVEAZRX">
+  <nav class="z-10 w-full absolute astro-GUVEAZRX">
     <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
-    <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative astro-B2PV3EDZ">
-        <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer astro-B2PV3EDZ">
-        <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0 astro-B2PV3EDZ">
-          <a href="/" aria-label="logo" class="flex space-x-2 items-center astro-B2PV3EDZ">
+    <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative astro-GUVEAZRX">
+        <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer astro-GUVEAZRX">
+        <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0 astro-GUVEAZRX">
+          <a href="/" aria-label="logo" class="flex space-x-2 items-center astro-GUVEAZRX">
             <!-- <div aria-hidden="true" class="flex space-x-1">
                             <div class="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"></div>
                             <div class="h-6 w-2 bg-primary"></div>
                         </div> -->
-            <span class="text-2xl font-bold text-gray-900 dark:text-white astro-B2PV3EDZ">Coach Bowman</span>
+            <span class="text-2xl font-bold text-gray-900 dark:text-white astro-GUVEAZRX">Coach Bowman</span>
           </a>
 
-          <div class="relative flex items-center lg:hidden max-h-10 astro-B2PV3EDZ">
-            <label role="button" for="toggle_nav" aria-label="humburger" id="hamburger" class="relative p-6 -mr-6 astro-B2PV3EDZ">
-              <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-B2PV3EDZ">
+          <div class="relative flex items-center lg:hidden max-h-10 astro-GUVEAZRX">
+            <label role="button" for="toggle_nav" aria-label="humburger" id="hamburger" class="relative p-6 -mr-6 astro-GUVEAZRX">
+              <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-GUVEAZRX">
               </div>
-              <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-B2PV3EDZ">
+              <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-GUVEAZRX">
               </div>
             </label>
           </div>
         </div>
-        <div aria-hidden="true" class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70 astro-B2PV3EDZ">
+        <div aria-hidden="true" class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70 astro-GUVEAZRX">
         </div>
         <div class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top
                             lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none
                             peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none
-                            dark:shadow-none dark:bg-gray-800 dark:border-gray-700 astro-B2PV3EDZ">
-          <div class="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0 astro-B2PV3EDZ">
-            <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0 astro-B2PV3EDZ">
-              <li class="astro-B2PV3EDZ">
-                <a href="/nil-program" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
-                  <span class="astro-B2PV3EDZ">NIL Program</span>
+                            dark:shadow-none dark:bg-gray-800 dark:border-gray-700 astro-GUVEAZRX">
+          <div class="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0 astro-GUVEAZRX">
+            <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0 astro-GUVEAZRX">
+              <li class="astro-GUVEAZRX">
+                <a href="/nil-program" class="block md:px-4 transition hover:text-primary astro-GUVEAZRX">
+                  <span class="astro-GUVEAZRX">NIL Program</span>
                 </a>
               </li>
-              <li class="astro-B2PV3EDZ">
-                <a href="/giveaways" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
-                  <span class="astro-B2PV3EDZ">Giveaways</span>
+              <!-- <li>
+                <a
+                  href="/contests"
+                  class="block md:px-4 transition hover:text-primary"
+                >
+                  <span>Contests</span>
                 </a>
-              </li>
-              <li class="astro-B2PV3EDZ">
-                <a href="#features" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
-                  <span class="astro-B2PV3EDZ">Features</span>
+              </li> -->
+              <li class="astro-GUVEAZRX">
+                <a href="#features" class="block md:px-4 transition hover:text-primary astro-GUVEAZRX">
+                  <span class="astro-GUVEAZRX">Features</span>
                 </a>
               </li>
             </ul>
           </div>
 
-          <div class="mt-12 lg:mt-0 astro-B2PV3EDZ">
-            <a href="https://apps.apple.com/us/app/coach-bowman/id6529521920" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max astro-B2PV3EDZ">
-              <span class="relative text-sm font-semibold text-white astro-B2PV3EDZ">Download for free</span>
+          <div class="mt-12 lg:mt-0 astro-GUVEAZRX">
+            <a href="https://apps.apple.com/us/app/coach-bowman/id6529521920" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max astro-GUVEAZRX">
+              <span class="relative text-sm font-semibold text-white astro-GUVEAZRX">Download for free</span>
             </a>
           </div>
         </div>

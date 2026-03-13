@@ -9,61 +9,64 @@
     <title>Coach Bowman</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/download-form.b76027b7.css" /><script type="module">const w=document.getElementById("giveaway-progress-fill"),l=document.getElementById("giveaway-progress-points"),T=document.getElementById("giveaway-progress-label"),p=document.getElementById("giveaway-progress-text"),u=document.getElementById("giveaway-progress-highlight"),D="2026-04-06T12:00:00",b=()=>new Date(D),f=l?.dataset.questionMark||"";if(w&&l&&T&&p&&u){const g=(()=>{const e=b(),t=e.getFullYear(),s=new Date(t,3,30,23,59,59,999);return e>s?t+1:t})(),c=new Date(g,3,1,0,0,0,0),h=new Date(g,3,30,23,59,59,999),m=(e=>{const t=[];for(let s=1;s<=30;s+=1){const o=new Date(e,3,s);o.getDay()===0&&t.push(o)}return t})(g),E=()=>{const e=h.getTime()-c.getTime();l.innerHTML="",m.forEach(t=>{const o=(t.getTime()-c.getTime())/e*100,a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${o}%`,a.style.transform="translate(-90%, -180%)",a.style.zIndex="2",a.title="Winner headshot",a.innerHTML=`<img src="${f}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const n=document.createElement("span");n.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",n.style.left=`${o}%`,n.style.transform="translate(-10%, -180%)",n.style.zIndex="1",n.title="Winner headshot",n.innerHTML=`<img src="${f}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const r=document.createElement("span");r.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",r.style.left=`${o}%`,r.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const d=document.createElement("span");d.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",d.style.left=`${o}%`,d.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),l.appendChild(n),l.appendChild(a),l.appendChild(r),l.appendChild(d)})},y=()=>{const e=b(),t=h.getTime()-c.getTime(),s=e.getTime()-c.getTime(),a=Math.min(Math.max(s,0),t)/t*100;w.style.width=`${a}%`;const n=m.find(i=>e<=i),r=1e3*60*60*24,d=n?(n.getTime()-e.getTime())/r:0,x=Math.max(0,Math.ceil(d));m.some(i=>i.getDate()===e.getDate()&&i.getMonth()===e.getMonth()&&i.getFullYear()===e.getFullYear())?(p.textContent="",u.textContent="New Winners Announced!"):(p.textContent="Two New Winners in ",u.textContent=`${x} Days`)};E(),y(),setInterval(()=>{y()},1e3)}
+  <link rel="stylesheet" href="/assets/contests.f375be77.css" /><script type="module">const f=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),D=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),p=document.getElementById("giveaway-progress-highlight"),x=()=>new Date,E=r?.dataset.questionMark||"";if(f&&r&&D&&y&&p){const u=(()=>{const e=x(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),g=new Date(u,4,1,0,0,0,0),w=new Date(u,4,31,23,59,59,999),l=(e=>{const t=[];for(let n=1;n<=31;n+=1){const m=new Date(e,4,n);m.getDay()===0&&t.push(m)}return t.slice(1,5)})(u),T=()=>{const e=w.getTime()-g.getTime();r.innerHTML="",l.forEach((t,n)=>{const h=(t.getTime()-g.getTime())/e*100,i=(n+.5)/l.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${i}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${i}%`,a.style.transform="translate(-10%, -180%)",a.style.zIndex="1",a.title="Winner headshot",a.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const d=document.createElement("span");d.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",d.style.left=`${h}%`,d.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const c=document.createElement("span");c.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",c.style.left=`${h}%`,c.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(a),r.appendChild(s),r.appendChild(d),r.appendChild(c)})},b=()=>{const e=x(),t=w.getTime()-g.getTime(),n=e.getTime()-g.getTime(),h=Math.min(Math.max(n,0),t)/t*100;f.style.width=`${h}%`;const i=l.find(o=>e<=o),s=1e3*60*60*24,a=i?(i.getTime()-e.getTime())/s:0,d=Math.max(0,Math.ceil(a));if(l.some(o=>o.getDate()===e.getDate()&&o.getMonth()===e.getMonth()&&o.getFullYear()===e.getFullYear()))y.textContent="",p.textContent="New Winners Announced!";else{const o=l.length>0&&e<l[0];y.textContent=o?"First Two Winners in ":"Next Two Winners in ",p.textContent=`${d} Days`}};T(),b(),setInterval(()=>{b()},1e3)}
 </script></head>
   <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
-    <header class="astro-B2PV3EDZ">
-  <nav class="z-10 w-full absolute astro-B2PV3EDZ">
+    <header class="astro-GUVEAZRX">
+  <nav class="z-10 w-full absolute astro-GUVEAZRX">
     <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
-    <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative astro-B2PV3EDZ">
-        <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer astro-B2PV3EDZ">
-        <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0 astro-B2PV3EDZ">
-          <a href="/" aria-label="logo" class="flex space-x-2 items-center astro-B2PV3EDZ">
+    <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative astro-GUVEAZRX">
+        <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer astro-GUVEAZRX">
+        <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0 astro-GUVEAZRX">
+          <a href="/" aria-label="logo" class="flex space-x-2 items-center astro-GUVEAZRX">
             <!-- <div aria-hidden="true" class="flex space-x-1">
                             <div class="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"></div>
                             <div class="h-6 w-2 bg-primary"></div>
                         </div> -->
-            <span class="text-2xl font-bold text-gray-900 dark:text-white astro-B2PV3EDZ">Coach Bowman</span>
+            <span class="text-2xl font-bold text-gray-900 dark:text-white astro-GUVEAZRX">Coach Bowman</span>
           </a>
 
-          <div class="relative flex items-center lg:hidden max-h-10 astro-B2PV3EDZ">
-            <label role="button" for="toggle_nav" aria-label="humburger" id="hamburger" class="relative p-6 -mr-6 astro-B2PV3EDZ">
-              <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-B2PV3EDZ">
+          <div class="relative flex items-center lg:hidden max-h-10 astro-GUVEAZRX">
+            <label role="button" for="toggle_nav" aria-label="humburger" id="hamburger" class="relative p-6 -mr-6 astro-GUVEAZRX">
+              <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-GUVEAZRX">
               </div>
-              <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-B2PV3EDZ">
+              <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-GUVEAZRX">
               </div>
             </label>
           </div>
         </div>
-        <div aria-hidden="true" class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70 astro-B2PV3EDZ">
+        <div aria-hidden="true" class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70 astro-GUVEAZRX">
         </div>
         <div class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top
                             lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none
                             peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none
-                            dark:shadow-none dark:bg-gray-800 dark:border-gray-700 astro-B2PV3EDZ">
-          <div class="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0 astro-B2PV3EDZ">
-            <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0 astro-B2PV3EDZ">
-              <li class="astro-B2PV3EDZ">
-                <a href="/nil-program" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
-                  <span class="astro-B2PV3EDZ">NIL Program</span>
+                            dark:shadow-none dark:bg-gray-800 dark:border-gray-700 astro-GUVEAZRX">
+          <div class="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0 astro-GUVEAZRX">
+            <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0 astro-GUVEAZRX">
+              <li class="astro-GUVEAZRX">
+                <a href="/nil-program" class="block md:px-4 transition hover:text-primary astro-GUVEAZRX">
+                  <span class="astro-GUVEAZRX">NIL Program</span>
                 </a>
               </li>
-              <li class="astro-B2PV3EDZ">
-                <a href="/giveaways" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
-                  <span class="astro-B2PV3EDZ">Giveaways</span>
+              <!-- <li>
+                <a
+                  href="/contests"
+                  class="block md:px-4 transition hover:text-primary"
+                >
+                  <span>Contests</span>
                 </a>
-              </li>
-              <li class="astro-B2PV3EDZ">
-                <a href="#features" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
-                  <span class="astro-B2PV3EDZ">Features</span>
+              </li> -->
+              <li class="astro-GUVEAZRX">
+                <a href="#features" class="block md:px-4 transition hover:text-primary astro-GUVEAZRX">
+                  <span class="astro-GUVEAZRX">Features</span>
                 </a>
               </li>
             </ul>
           </div>
 
-          <div class="mt-12 lg:mt-0 astro-B2PV3EDZ">
-            <a href="https://apps.apple.com/us/app/coach-bowman/id6529521920" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max astro-B2PV3EDZ">
-              <span class="relative text-sm font-semibold text-white astro-B2PV3EDZ">Download for free</span>
+          <div class="mt-12 lg:mt-0 astro-GUVEAZRX">
+            <a href="https://apps.apple.com/us/app/coach-bowman/id6529521920" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max astro-GUVEAZRX">
+              <span class="relative text-sm font-semibold text-white astro-GUVEAZRX">Download for free</span>
             </a>
           </div>
         </div>
@@ -85,12 +88,12 @@
     <div class="relative pt-20 xl:pt-36 ml-auto">
       <div class="text-center mx-auto">
         <h1 class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
-          Enter the <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-5xl md:text-6xl xl:text-7xl">Coach Bowman Challenge</span>
+          Coach Bowman <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-5xl md:text-6xl xl:text-7xl">Contest</span>
         </h1>
 
         
         <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300">
-        In the Month of April, we will be hosting the #CoachBowmanChallenge, a month-long giveaway where we will be awarding 2 winners every week with an exclusive prize pack. 
+        In the Month of May, we will be hosting the #CoachBowmanChallenge, a month-long giveaway where we will be awarding 2 winners every week with an exclusive prize pack. Contest is not open yet.
         </p>
 
       </div>
@@ -127,7 +130,7 @@
           <p class="mt-8 text-center text-lg text-gray-600 dark:text-gray-300">
           The chance to win a prize pack that includes: Exclusive Coach Bowman Training Tank, Tripod, One Year Coach Bowman Subscription, and a $100 Amamzon Giftcard.
         </p>
-          <img src="/assets/prizes.7afb4085.png" alt="dashboard screenshot" class="w-full mt-0 md:mt-0">
+          <img src="/assets/prizes.af997e97.png" alt="dashboard screenshot" class="w-full mt-0 md:mt-0">
         </div>
       <div class="md:w-1/2">
           <p class="mt-8 mb-0 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl">
@@ -155,10 +158,7 @@
             </div>
             <div id="giveaway-progress-points" class="absolute inset-0" data-question-mark="/assets/question_mark.f83a1a6c.jpg"></div>
           </div>
-          
            <div class="mt-2 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300">
-            <span>Apr 1</span>
-            <span>Apr 30</span>
           </div>
         </div>
         
@@ -170,16 +170,16 @@
   <div class="m-10 lg:my-10 lg:mr-32 lg:ml-10">
     <div class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-10 lg:items-center">
       <div class="md:w-7/12 lg:w-1/2">
-        <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">How to Enter the
+        <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white text-center">How to Enter the
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold">#CoachBowmanContest</span>
         </h2>
         <div class="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
           <div class="mt-8 flex gap-4 md:items-center">
             <div class="w-12 h-12 flex gap-4 rounded-full bg-green-200 dark:bg-green-900/20">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-green-600 dark:text-green-400">
-                <rect x="3" y="6" width="18" height="12" rx="2"></rect>
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M3 10c2 0 3-2 3-2M21 10c-2 0-3-2-3-2M3 14c2 0 3 2 3 2M21 14c-2 0-3 2-3 2"></path>
+                <path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"></path>
+                <path d="M14 3v5h5"></path>
+                <path d="M9 15l6-6 2 2-6 6-3 1z"></path>
               </svg>
             </div>
             <div class="w-5/6">
@@ -192,15 +192,15 @@
             </div>
           </div>
           <div class="pt-4 flex gap-4 md:items-center">
-            <div class="w-12 h-12 flex gap-4 rounded-full bg-green-300 dark:bg-green-800/30">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-green-700 dark:text-green-500">
-                <line x1="6" y1="18" x2="18" y2="6"></line>
-                <circle cx="7.5" cy="7.5" r="2.5"></circle>
-                <circle cx="16.5" cy="16.5" r="2.5"></circle>
+            <div class="w-12 h-12 flex gap-4 rounded-full bg-sky-200 dark:bg-sky-900/30">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-sky-700 dark:text-sky-400">
+                <path d="M12 3v12"></path>
+                <path d="M8 11l4 4 4-4"></path>
+                <rect x="4" y="18" width="16" height="3" rx="1.5"></rect>
               </svg>
             </div>
             <div class="w-5/6">
-              <h4 class="font-semibold text-lg text-gray-700 dark:text-green-500">
+              <h4 class="font-semibold text-lg text-gray-700 dark:text-sky-400">
                 Step 2: Download the Coach Bowman App
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
@@ -210,16 +210,17 @@
             </div>
           </div>
           <div class="pt-4 flex gap-4 md:items-center">
-            <div class="w-12 h-12 flex items-center justify-center gap-4 rounded-full bg-purple-200 dark:bg-purple-900/20">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-purple-600 dark:text-purple-400 translate-x-[1px]">
-                <circle cx="9" cy="8" r="3"></circle>
-                <path d="M2 20c0-3.314 3.134-6 7-6"></path>
-                <path d="M16 11v4"></path>
-                <path d="M14 13h4"></path>
+            <div class="w-12 h-12 flex items-center justify-center gap-4 rounded-full bg-blue-200 dark:bg-blue-900/20">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-blue-700 dark:text-blue-400">
+                <rect x="4" y="5" width="16" height="10" rx="2"></rect>
+                <path d="M8 15l-2 4"></path>
+                <path d="M16 15l2 4"></path>
+                <circle cx="9" cy="10" r="1.5"></circle>
+                <circle cx="15" cy="10" r="1.5"></circle>
               </svg>
             </div>
             <div class="w-5/6">
-              <h4 class="font-semibold text-lg text-gray-700 dark:text-purple-400">
+              <h4 class="font-semibold text-lg text-gray-700 dark:text-blue-400">
                 Step 3: Capture Your Clip in the Coach Bowman App
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
@@ -312,17 +313,17 @@
   <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
     <div class="relative">
       <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
-        <h1 class="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
-          Required Giveaway Entry Form
-        </h1>
+         <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white text-center">Enter the
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold">#CoachBowmanContest</span>
+        </h2>
 
         <p class="text-center text-xl text-gray-600 dark:text-gray-300">
-          To officially enter #CoachBowmanChallenge1, you must complete this
+          To officially enter #CoachBowmanContest, you must complete this
           form and agree to the Terms and Conditions.
         </p>
         <form action="#" method="post" class="mx-auto mt-10 w-full max-w-2xl rounded-2xl border border-gray-200 bg-white/90 p-6 text-left shadow-md backdrop-blur dark:border-gray-700 dark:bg-gray-900/70">
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
-            Complete Your Required Entry
+            Official Entry Form
           </h2>
           <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
             This legal form is required for giveaway eligibility. Entries
