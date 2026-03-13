@@ -9,7 +9,7 @@
     <title>Coach Bowman</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/contests.f375be77.css" /><script type="module">const f=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),D=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),p=document.getElementById("giveaway-progress-highlight"),x=()=>new Date,E=r?.dataset.questionMark||"";if(f&&r&&D&&y&&p){const u=(()=>{const e=x(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),g=new Date(u,4,1,0,0,0,0),w=new Date(u,4,31,23,59,59,999),l=(e=>{const t=[];for(let n=1;n<=31;n+=1){const m=new Date(e,4,n);m.getDay()===0&&t.push(m)}return t.slice(1,5)})(u),T=()=>{const e=w.getTime()-g.getTime();r.innerHTML="",l.forEach((t,n)=>{const h=(t.getTime()-g.getTime())/e*100,i=(n+.5)/l.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${i}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${i}%`,a.style.transform="translate(-10%, -180%)",a.style.zIndex="1",a.title="Winner headshot",a.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const d=document.createElement("span");d.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",d.style.left=`${h}%`,d.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const c=document.createElement("span");c.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",c.style.left=`${h}%`,c.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(a),r.appendChild(s),r.appendChild(d),r.appendChild(c)})},b=()=>{const e=x(),t=w.getTime()-g.getTime(),n=e.getTime()-g.getTime(),h=Math.min(Math.max(n,0),t)/t*100;f.style.width=`${h}%`;const i=l.find(o=>e<=o),s=1e3*60*60*24,a=i?(i.getTime()-e.getTime())/s:0,d=Math.max(0,Math.ceil(a));if(l.some(o=>o.getDate()===e.getDate()&&o.getMonth()===e.getMonth()&&o.getFullYear()===e.getFullYear()))y.textContent="",p.textContent="New Winners Announced!";else{const o=l.length>0&&e<l[0];y.textContent=o?"First Two Winners in ":"Next Two Winners in ",p.textContent=`${d} Days`}};T(),b(),setInterval(()=>{b()},1e3)}
+  <link rel="stylesheet" href="/assets/contests.132d2d7c.css" /><script type="module">const f=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),D=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),p=document.getElementById("giveaway-progress-highlight"),x=()=>new Date,E=r?.dataset.questionMark||"";if(f&&r&&D&&y&&p){const u=(()=>{const e=x(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),g=new Date(u,4,1,0,0,0,0),w=new Date(u,4,31,23,59,59,999),l=(e=>{const t=[];for(let n=1;n<=31;n+=1){const m=new Date(e,4,n);m.getDay()===0&&t.push(m)}return t.slice(1,5)})(u),T=()=>{const e=w.getTime()-g.getTime();r.innerHTML="",l.forEach((t,n)=>{const h=(t.getTime()-g.getTime())/e*100,i=(n+.5)/l.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${i}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${i}%`,a.style.transform="translate(-10%, -180%)",a.style.zIndex="1",a.title="Winner headshot",a.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const d=document.createElement("span");d.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",d.style.left=`${h}%`,d.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const c=document.createElement("span");c.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",c.style.left=`${h}%`,c.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(a),r.appendChild(s),r.appendChild(d),r.appendChild(c)})},b=()=>{const e=x(),t=w.getTime()-g.getTime(),n=e.getTime()-g.getTime(),h=Math.min(Math.max(n,0),t)/t*100;f.style.width=`${h}%`;const i=l.find(o=>e<=o),s=1e3*60*60*24,a=i?(i.getTime()-e.getTime())/s:0,d=Math.max(0,Math.ceil(a));if(l.some(o=>o.getDate()===e.getDate()&&o.getMonth()===e.getMonth()&&o.getFullYear()===e.getFullYear()))y.textContent="",p.textContent="New Winners Announced!";else{const o=l.length>0&&e<l[0];y.textContent=o?"First Two Winners in ":"Next Two Winners in ",p.textContent=`${d} Days`}};T(),b(),setInterval(()=>{b()},1e3)}
 </script></head>
   <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
     <header class="astro-GUVEAZRX">
@@ -127,8 +127,8 @@
               ~$250
             </span>Per Winner
           </p>
-          <p class="mt-8 text-center text-lg text-gray-600 dark:text-gray-300">
-          The chance to win a prize pack that includes: Exclusive Coach Bowman Training Tank, Tripod, One Year Coach Bowman Subscription, and a $100 Amamzon Giftcard.
+          <p class="mt-8 mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
+          The chance to win a prize pack that includes: Exclusive Coach Bowman Training Tank, Tripod, One Year Coach Bowman Subscription, and a $100 Amazon Giftcard.
         </p>
           <img src="/assets/prizes.af997e97.png" alt="dashboard screenshot" class="w-full mt-0 md:mt-0">
         </div>
@@ -184,10 +184,10 @@
             </div>
             <div class="w-5/6">
               <h4 class="font-semibold text-lg text-gray-700 dark:text-green-400">
-                Step 1: Agree to Giveaway Terms (Bottom of this page)
+                Step 1: Submit the Official Entry Form (Bottom of this page)
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                Submissions will only be accepted if the Giveaway Terms have been accepted and submitted below.
+                Submissions will only be accepted if the Official Entry Form has been completed and submitted below.
               </p>
             </div>
           </div>
@@ -263,7 +263,26 @@
          
         </h2>
         <div class="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
-          <div class="mt-8 flex gap-4 md:items-center">
+          <div class="pt-8 flex gap-4 md:items-center">
+            <div class="w-12 h-12 flex gap-4 rounded-full bg-blue-200 dark:bg-blue-900/20">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-blue-700 dark:text-blue-400">
+                <rect x="3" y="6" width="10" height="12" rx="2"></rect>
+                <rect x="7" y="3" width="10" height="12" rx="2"></rect>
+                <path d="M19 15v6"></path>
+                <path d="M16 18h6"></path>
+              </svg>
+            </div>
+            <div class="w-5/6">
+              <h4 class="font-semibold text-lg text-gray-700 dark:text-blue-400">
+                Multiple Submissions
+              </h4>
+              <p class="text-gray-500 dark:text-gray-400">
+                Participants may submit an unlimited number of unique entries. Once submitted, each entry remains eligible for every drawing that occurs later in that month.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-4 flex gap-4 md:items-center">
             
             <div class="w-12 h-12 flex gap-4 rounded-full bg-green-100 dark:bg-green-900/20">
               <div class="w-12 h-12 flex gap-4 rounded-full bg-green-100 dark:bg-green-900/20">
@@ -280,7 +299,7 @@
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
                 We pick the most creative, funny, or unique entries. It is
-                not about the hardest skill or highest score.
+                not about the hardest skill or highest score. 
               </p>
             </div>
           </div>
