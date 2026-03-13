@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-DW52LVGJ">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="generator" content="Astro v1.9.2">
+    <meta name="Coach Bowman" content="Video delay app. Mobile video review for coaches and athletes.">
+    <title>Coach Bowman</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/download-form.aa01d328.css" /><script type="module">window.fetchUsers=async function(){const e=document.getElementById("user-table-body"),a="/api/users";console.log("Fetching users from:",a);try{const r=await fetch(a);if(!r.ok)throw new Error(`HTTP error! status: ${r.status}`);const s=await r.json();s.length>0?e.innerHTML=s.map(t=>`
+            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+              <td class="px-4 py-2 border-b dark:border-gray-700">${t.id}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${t.name}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${t.email}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${t.sport}</td>
+              <td class="px-4 py-2 border-b dark:border-gray-700">${t.formattedDate}</td>
+            </tr>
+          `).join(""):e.innerHTML=`
+          <tr>
+            <td colspan="5" class="text-center text-gray-600 dark:text-gray-400 py-4">
+              No users found.
+            </td>
+          </tr>
+        `}catch(r){e.innerHTML=`
+        <tr>
+          <td colspan="5" class="text-center text-gray-600 dark:text-gray-400 py-4">
+            Failed to load users.
+          </td>
+        </tr>
+      `,console.error(r)}};
+</script></head>
+  <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
+    <header class="astro-B2PV3EDZ">
+  <nav class="z-10 w-full absolute astro-B2PV3EDZ">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+    <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative astro-B2PV3EDZ">
+        <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer astro-B2PV3EDZ">
+        <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0 astro-B2PV3EDZ">
+          <a href="/" aria-label="logo" class="flex space-x-2 items-center astro-B2PV3EDZ">
+            <!-- <div aria-hidden="true" class="flex space-x-1">
+                            <div class="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"></div>
+                            <div class="h-6 w-2 bg-primary"></div>
+                        </div> -->
+            <span class="text-2xl font-bold text-gray-900 dark:text-white astro-B2PV3EDZ">Coach Bowman</span>
+          </a>
+
+          <div class="relative flex items-center lg:hidden max-h-10 astro-B2PV3EDZ">
+            <label role="button" for="toggle_nav" aria-label="humburger" id="hamburger" class="relative p-6 -mr-6 astro-B2PV3EDZ">
+              <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-B2PV3EDZ">
+              </div>
+              <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 dark:bg-gray-300 transition duration-300 astro-B2PV3EDZ">
+              </div>
+            </label>
+          </div>
+        </div>
+        <div aria-hidden="true" class="fixed z-10 inset-0 h-screen w-screen bg-white/70 backdrop-blur-2xl origin-bottom scale-y-0 transition duration-500 peer-checked:origin-top peer-checked:scale-y-100 lg:hidden dark:bg-gray-900/70 astro-B2PV3EDZ">
+        </div>
+        <div class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1 absolute top-full left-0 transition-all duration-300 scale-95 origin-top
+                            lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none
+                            peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none
+                            dark:shadow-none dark:bg-gray-800 dark:border-gray-700 astro-B2PV3EDZ">
+          <div class="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0 astro-B2PV3EDZ">
+            <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0 astro-B2PV3EDZ">
+              <li class="astro-B2PV3EDZ">
+                <a href="/nil-program" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
+                  <span class="astro-B2PV3EDZ">NIL Program</span>
+                </a>
+              </li>
+              <li class="astro-B2PV3EDZ">
+                <a href="/giveaways" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
+                  <span class="astro-B2PV3EDZ">Giveaways</span>
+                </a>
+              </li>
+              <li class="astro-B2PV3EDZ">
+                <a href="#features" class="block md:px-4 transition hover:text-primary astro-B2PV3EDZ">
+                  <span class="astro-B2PV3EDZ">Features</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-12 lg:mt-0 astro-B2PV3EDZ">
+            <a href="https://apps.apple.com/us/app/coach-bowman/id6529521920" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max astro-B2PV3EDZ">
+              <span class="relative text-sm font-semibold text-white astro-B2PV3EDZ">Download for free</span>
+            </a>
+          </div>
+        </div>
+      </div>
+</div>
+  </nav>
+</header>
+
+
+    <main class="space-y-20 mb-10">
+    <div class="relative" id="home">
+  <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-30 dark:opacity-50">
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400">
+    </div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300">
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+    <div class="pt-10 ml-auto">
+      <section class="bg-white dark:bg-gray-900">
+        <div class="relative py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div class="text-center mx-auto mb-8">
+            <h1 class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-6xl">
+              Users
+            </h1>
+            <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300">
+              A list of users fetched from the API.
+            </p>
+          </div>
+          <!-- Fetch Button -->
+          <div class="text-center mb-6">
+            <button onclick="fetchUsers()" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800">
+              Fetch Users
+            </button>
+          </div>
+          <!-- User Table -->
+          <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-600/10 max-w-auto mx-auto">
+            <div class="overflow-x-auto">
+              <table class="table-auto w-full text-left text-gray-900 dark:text-gray-200">
+                <thead>
+                  <tr>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">ID</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Name</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Email</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Sport</th>
+                    <th class="px-4 py-2 border-b dark:border-gray-700">Date</th>
+                  </tr>
+                </thead>
+                <tbody id="user-table-body">
+                  <!-- Rows will be dynamically populated here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+</div>
+</div>
+
+
+  </main>
+    <footer class="py-20 md:py-40">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+    <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
+      <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
+        <div class="flex w-full justify-center space-x-12 text-gray-600 dark:text-gray-300 sm:w-7/12 md:justify-start">
+          <ul class="list-inside list-disc space-y-8">
+            <li><a href="#" class="transition hover:text-primary">Home</a></li>
+
+            <li>
+              <a href="#features" class="transition hover:text-primary">Features</a>
+            </li>
+
+            <li>
+              <a href="terms" class="transition hover:text-primary">Terms of Use</a>
+            </li>
+            <li>
+              <a href="private-policy" class="transition hover:text-primary">Private Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="m-auto mt-16 w-10/12 space-y-6 text-center sm:mt-auto sm:w-5/12 sm:text-left">
+          <span class="block text-gray-500 dark:text-gray-400">
+            Coach Bowman
+          </span>
+          <span class="block text-gray-500 dark:text-gray-400">
+            Making sports software accessible to coaches of all levels
+          </span>
+
+          <span class="block text-gray-500 dark:text-gray-400">Need help? Contact Us
+            <a href="mailto:coach.bowman.app@gmail.com">coach.bowman.app@gmail.com</a>
+          </span>
+        </div>
+      </div>
+    </div>
+</div>
+</footer>
+  
+</body></html>

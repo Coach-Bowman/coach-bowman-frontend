@@ -1,0 +1,253 @@
+---
+import Container from "../Container.astro";
+import prizes from "../../assets/prizes.png";
+import question_mark from "../../assets/question_mark.jpg";
+---
+
+<div class="relative" id="home">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-30 dark:opacity-50"
+  >
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400">
+    </div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300">
+    </div>
+  </div>
+  <Container>
+    <div class="relative pt-20 xl:pt-36 ml-auto">
+      <div class="text-center mx-auto">
+        <h1
+          class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl"
+        >
+          Enter the <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-5xl md:text-6xl xl:text-7xl"
+            >Coach Bowman Challenge</span
+          >
+        </h1>
+
+        
+        <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300">
+        In the Month of April, we will be hosting the #CoachBowmanChallenge, a month-long giveaway where we will be awarding 2 winners every week with an exclusive prize pack. 
+        </p>
+
+        <div class="">
+        <img
+          src={prizes}
+          alt="dashboard screenshot"
+          class="w-full mt-0 md:mt-0"
+        />
+        <div class="mx-auto mt-6 w-full max-w-5xl">
+          <p
+            id="giveaway-progress-label"
+            class="mb-32 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-6xl md:mb-28"
+          >
+            <span id="giveaway-progress-text">Two New Winners in </span>
+            <span
+              id="giveaway-progress-highlight"
+              class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-6xl"
+            >
+              0 Days
+            </span>
+          </p>
+          <div class="relative h-3 overflow-visible rounded-full bg-gray-200 dark:bg-gray-700">
+            <div
+              id="giveaway-progress-fill"
+              class="h-full rounded-full bg-primary transition-all duration-500"
+              style="width: 0%;"
+            >
+            </div>
+            <div
+              id="giveaway-progress-points"
+              class="absolute inset-0"
+              data-question-mark={question_mark}
+            ></div>
+          </div>
+          
+           <div
+            class="mt-2 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300"
+          >
+            <span>Apr 1</span>
+            <span>Apr 30</span>
+          </div>
+        </div>
+      </div>
+        <div class="mt-12 flex flex-wrap justify-center gap-y-4 gap-x-6">
+
+          <a
+            href="#features"
+            class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
+          >
+            <span
+              class="relative text-base font-semibold text-primary dark:text-white"
+              >View Rules</span
+            >
+          </a>
+        </div>
+        <!-- <div class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
+                    <div class="text-left">
+                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The lowest price</h6>
+                        <p class="mt-2 text-gray-500">Some text here</p>
+                    </div>
+                    <div class="text-left">
+                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The fastest on the market</h6>
+                        <p class="mt-2 text-gray-500">Some text here</p>
+                    </div>
+                    <div class="text-left">
+                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The most loved</h6>
+                        <p class="mt-2 text-gray-500">Some text here</p>
+                    </div>
+                </div> -->
+      </div>
+      <!-- <div class="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                    <img src="./images/clients/microsoft.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                  </div>
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/airbnb.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div>
+                <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/google.svg" class="h-9 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div>
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                    <img src="./images/clients/ge.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                  </div>
+                  <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+                    <img src="./images/clients/netflix.svg" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
+                  </div>
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                    <img src="./images/clients/google-cloud.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div>
+              </div> -->
+    </div>
+  </Container>
+</div>
+
+<script>
+  const progressFillElement = document.getElementById("giveaway-progress-fill");
+  const progressPointsElement = document.getElementById("giveaway-progress-points");
+  const progressLabelElement = document.getElementById("giveaway-progress-label");
+  const progressLabelTextElement = document.getElementById("giveaway-progress-text");
+  const progressLabelHighlightElement = document.getElementById("giveaway-progress-highlight");
+  const MANUAL_TEST_DATE = "2026-04-06T12:00:00";
+  const getNow = () => (MANUAL_TEST_DATE ? new Date(MANUAL_TEST_DATE) : new Date());
+  const questionMarkImage = progressPointsElement?.dataset.questionMark || "";
+
+  if (
+    progressFillElement &&
+    progressPointsElement &&
+    progressLabelElement &&
+    progressLabelTextElement &&
+    progressLabelHighlightElement
+  ) {
+    const getChallengeYear = () => {
+      const now = getNow();
+      const currentYear = now.getFullYear();
+      const aprilEnd = new Date(currentYear, 3, 30, 23, 59, 59, 999);
+      return now > aprilEnd ? currentYear + 1 : currentYear;
+    };
+
+    const challengeYear = getChallengeYear();
+    const challengeStart = new Date(challengeYear, 3, 1, 0, 0, 0, 0);
+    const challengeEnd = new Date(challengeYear, 3, 30, 23, 59, 59, 999);
+
+    const getSundaysInApril = (year) => {
+      const sundays = [];
+      for (let day = 1; day <= 30; day += 1) {
+        const date = new Date(year, 3, day);
+        if (date.getDay() === 0) sundays.push(date);
+      }
+      return sundays;
+    };
+
+    const sundays = getSundaysInApril(challengeYear);
+
+    const initProgressPoints = () => {
+      const totalDuration = challengeEnd.getTime() - challengeStart.getTime();
+
+      progressPointsElement.innerHTML = "";
+      sundays.forEach((sunday) => {
+        const elapsed = sunday.getTime() - challengeStart.getTime();
+        const positionPercent = (elapsed / totalDuration) * 100;
+
+        const winnerSlotLeft = document.createElement("span");
+        winnerSlotLeft.className =
+          "absolute top-1/2 h-14 w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800";
+        winnerSlotLeft.style.left = `${positionPercent}%`;
+        winnerSlotLeft.style.transform = "translate(-90%, -180%)";
+        winnerSlotLeft.style.zIndex = "2";
+        winnerSlotLeft.title = "Winner headshot";
+        winnerSlotLeft.innerHTML = `<img src="${questionMarkImage}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;
+
+        const winnerSlotRight = document.createElement("span");
+        winnerSlotRight.className =
+          "absolute top-1/2 h-14 w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800";
+        winnerSlotRight.style.left = `${positionPercent}%`;
+        winnerSlotRight.style.transform = "translate(-10%, -180%)";
+        winnerSlotRight.style.zIndex = "1";
+        winnerSlotRight.title = "Winner headshot";
+        winnerSlotRight.innerHTML = `<img src="${questionMarkImage}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;
+
+        const point = document.createElement("span");
+        point.className =
+          "absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900";
+        point.style.left = `${positionPercent}%`;
+        point.title = sunday.toLocaleDateString(undefined, {
+          month: "short",
+          day: "numeric",
+        });
+
+        const label = document.createElement("span");
+        label.className =
+          "absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300";
+        label.style.left = `${positionPercent}%`;
+        label.textContent = sunday.toLocaleDateString(undefined, {
+          month: "short",
+          day: "numeric",
+        });
+
+        progressPointsElement.appendChild(winnerSlotRight);
+        progressPointsElement.appendChild(winnerSlotLeft);
+        progressPointsElement.appendChild(point);
+        progressPointsElement.appendChild(label);
+      });
+    };
+
+    const updateProgress = () => {
+      const now = getNow();
+      const totalDuration = challengeEnd.getTime() - challengeStart.getTime();
+      const elapsed = now.getTime() - challengeStart.getTime();
+      const clampedElapsed = Math.min(Math.max(elapsed, 0), totalDuration);
+      const progress = (clampedElapsed / totalDuration) * 100;
+
+      progressFillElement.style.width = `${progress}%`;
+
+      const nextSunday = sundays.find((sunday) => now <= sunday);
+      const msInDay = 1000 * 60 * 60 * 24;
+      const rawDaysUntilNextSunday = nextSunday
+        ? (nextSunday.getTime() - now.getTime()) / msInDay
+        : 0;
+      const daysUntilNextSunday = Math.max(0, Math.ceil(rawDaysUntilNextSunday));
+      const isSundayMilestone = sundays.some(
+        (sunday) =>
+          sunday.getDate() === now.getDate() &&
+          sunday.getMonth() === now.getMonth() &&
+          sunday.getFullYear() === now.getFullYear(),
+      );
+
+      if (isSundayMilestone) {
+        progressLabelTextElement.textContent = "";
+        progressLabelHighlightElement.textContent = "New Winners Announced!";
+      } else {
+        progressLabelTextElement.textContent = "Two New Winners in ";
+        progressLabelHighlightElement.textContent = `${daysUntilNextSunday} Days`;
+      }
+    };
+
+    initProgressPoints();
+    updateProgress();
+    setInterval(() => {
+      updateProgress();
+    }, 1000);
+  }
+</script>
