@@ -2,9 +2,10 @@
 import Container from "../Container.astro";
 import unconnected_tripod from "../../assets/unconnected-tripod.png";
 import beam from "../../assets/SOPHIE-BEAM.png";
-import instagram from "../../assets/instagram.png";
-import threeSkillVideo_light from "../../assets/light-mode-video.mp4";
-import threeSkillVideo_dark from "../../assets/dark-mode-video.mp4";
+import stickCellyVideoLight from "../../assets/sikra-stick-celly-light.mp4";
+import stickCellyVideoDark from "../../assets/sikra-stick-celly-dark.mp4";
+import clippingVideoLight from "../../assets/sikra-clipping-light.mp4";
+import clippingVideoDark from "../../assets/sikra-clipping-dark.mp4";
 import prizes from "../../assets/prizes.png";
 import question_mark from "../../assets/question_mark.jpg";
 
@@ -14,52 +15,59 @@ import question_mark from "../../assets/question_mark.jpg";
   <!-- <Container> -->
   <div class="mx-10 mt-10 lg:my-10 lg:ml-32 lg:mr-10">
     <div
-      class="space-y-6 justify-between text-gray-600 md:flex  md:gap-6 md:space-y-0 lg:gap-4 "
+      class="space-y-6 justify-between text-gray-600 md:flex md:gap-6 md:space-y-0 lg:gap-4 "
     >
       <div class="md:w-1/2">
           <p
             class="mt-8 mb-0 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl"
-          >Prizes:
+          >Chance to Win a
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-5xl"
             >
-              ~$250
-            </span>Per Winner
+              ~$250 Prize Pack
+            </span>
           </p>
           <p class="mt-8 mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
-          The chance to win a prize pack that includes: Exclusive Coach Bowman Training Tank, Tripod, One Year Coach Bowman Subscription, and a $100 Amazon Giftcard.
+          Exclusive Coach Bowman Training Tank, Tripod, One Year Coach Bowman Subscription, and a $100 Amazon Giftcard.
         </p>
           <img
             src={prizes}
             alt="dashboard screenshot"
-            class="w-full mt-0 md:mt-0"
+            class="mx-auto mt-0 w-full max-w-2xl md:mt-0"
           />
         </div>
       <div class="md:w-1/2">
           <p
             class="mt-8 mb-0 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl"
           >
-            <span>The Contest:</span>
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-5xl"
             >
-              Stick + Celly Challenge
-            </span>
+              Stick
+            </span> 
+            a Dismount, Hit a 
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-5xl"
+            >
+              Celly. 
+            </span> 
+            
+            
           </p>
          <p class="mt-8 mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
             Capture a stuck dismount followed by your favorite celebration using the Coach Bowman app. Want to stand out? Add your favorite skills before the dismount. 
         </p>
           <video
-          class="w-full dark:hidden"
-          src={threeSkillVideo_light}
+          class="mx-auto w-full max-w-2xl dark:hidden"
+          src={stickCellyVideoLight}
           autoplay
           loop
           muted
           playsinline
         ></video>
         <video
-          class="hidden w-full dark:block"
-          src={threeSkillVideo_dark}
+          class="mx-auto hidden w-full max-w-2xl dark:block"
+          src={stickCellyVideoDark}
           autoplay
           loop
           muted
@@ -112,7 +120,7 @@ import question_mark from "../../assets/question_mark.jpg";
     >
       <div class="md:w-7/12 lg:w-1/2">
         <h2
-          class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white text-center"
+          class="text-3xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white text-center"
         >How to Enter the
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold"
@@ -213,11 +221,22 @@ import question_mark from "../../assets/question_mark.jpg";
         </div>
       </div>
       <div class="md:w-5/12 lg:w-1/2">
-        <img
-          src={instagram}
-          alt="dashboard screenshot"
-          class="w-full mt-12 md:mt-0"
-        />
+        <video
+          class="mx-auto mt-12 w-full max-w-2xl dark:hidden md:mt-0"
+          src={clippingVideoLight}
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+        <video
+          class="mx-auto mt-12 hidden w-full max-w-2xl dark:block md:mt-0"
+          src={clippingVideoDark}
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
       </div>
     </div>
   </div>
