@@ -9,7 +9,7 @@
     <title>Coach Bowman</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/contests.f4422e63.css" /><script type="module">const f=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),D=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),p=document.getElementById("giveaway-progress-highlight"),x=()=>new Date,E=r?.dataset.questionMark||"";if(f&&r&&D&&y&&p){const u=(()=>{const e=x(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),g=new Date(u,4,1,0,0,0,0),w=new Date(u,4,31,23,59,59,999),l=(e=>{const t=[];for(let n=1;n<=31;n+=1){const m=new Date(e,4,n);m.getDay()===0&&t.push(m)}return t.slice(1,5)})(u),T=()=>{const e=w.getTime()-g.getTime();r.innerHTML="",l.forEach((t,n)=>{const h=(t.getTime()-g.getTime())/e*100,i=(n+.5)/l.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${i}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${i}%`,a.style.transform="translate(-10%, -180%)",a.style.zIndex="1",a.title="Winner headshot",a.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const d=document.createElement("span");d.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",d.style.left=`${h}%`,d.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const c=document.createElement("span");c.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",c.style.left=`${h}%`,c.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(a),r.appendChild(s),r.appendChild(d),r.appendChild(c)})},b=()=>{const e=x(),t=w.getTime()-g.getTime(),n=e.getTime()-g.getTime(),h=Math.min(Math.max(n,0),t)/t*100;f.style.width=`${h}%`;const i=l.find(o=>e<=o),s=1e3*60*60*24,a=i?(i.getTime()-e.getTime())/s:0,d=Math.max(0,Math.ceil(a));if(l.some(o=>o.getDate()===e.getDate()&&o.getMonth()===e.getMonth()&&o.getFullYear()===e.getFullYear()))y.textContent="",p.textContent="New Winners Announced!";else{const o=l.length>0&&e<l[0];y.textContent=o?"First Two Winners in ":"Next Two Winners in ",p.textContent=`${d} Days`}};T(),b(),setInterval(()=>{b()},1e3)}
+  <link rel="stylesheet" href="/assets/contests.c5e87e41.css" /><script type="module">const f=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),D=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),p=document.getElementById("giveaway-progress-highlight"),x=()=>new Date,E=r?.dataset.questionMark||"";if(f&&r&&D&&y&&p){const u=(()=>{const e=x(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),g=new Date(u,4,1,0,0,0,0),w=new Date(u,4,31,23,59,59,999),l=(e=>{const t=[];for(let n=1;n<=31;n+=1){const m=new Date(e,4,n);m.getDay()===0&&t.push(m)}return t.slice(1,5)})(u),T=()=>{const e=w.getTime()-g.getTime();r.innerHTML="",l.forEach((t,n)=>{const h=(t.getTime()-g.getTime())/e*100,i=(n+.5)/l.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${i}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${i}%`,a.style.transform="translate(-10%, -180%)",a.style.zIndex="1",a.title="Winner headshot",a.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const d=document.createElement("span");d.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",d.style.left=`${h}%`,d.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const c=document.createElement("span");c.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",c.style.left=`${h}%`,c.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(a),r.appendChild(s),r.appendChild(d),r.appendChild(c)})},b=()=>{const e=x(),t=w.getTime()-g.getTime(),n=e.getTime()-g.getTime(),h=Math.min(Math.max(n,0),t)/t*100;f.style.width=`${h}%`;const i=l.find(o=>e<=o),s=1e3*60*60*24,a=i?(i.getTime()-e.getTime())/s:0,d=Math.max(0,Math.ceil(a));if(l.some(o=>o.getDate()===e.getDate()&&o.getMonth()===e.getMonth()&&o.getFullYear()===e.getFullYear()))y.textContent="",p.textContent="New Winners Announced!";else{const o=l.length>0&&e<l[0];y.textContent=o?"First Two Winners in ":"Next Two Winners in ",p.textContent=`${d} Days`}};T(),b(),setInterval(()=>{b()},1e3)}
 </script></head>
   <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
     <header class="astro-GUVEAZRX">
@@ -88,15 +88,15 @@
     <div class="relative pt-20 xl:pt-36 ml-auto">
       <div class="text-center mx-auto">
         <h1 class="text-gray-900 dark:text-white font-bold text-2xl md:text-6xl xl:text-7xl">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-5xl md:text-6xl xl:text-7xl">Stick + Celly Contest</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-5xl md:text-6xl xl:text-7xl">Stick & Celly Contest</span>
         </h1>
 
         
         <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300">
-        Enter the #CoachBowmanContest, a month-long giveaway in May 2026 with 2 winners every week.
+        Enter the #CoachBowmanContest, a month-long giveaway in May 2026 with 2 winners every week. Open to boys and girls in gymnastics, cheerleading, trampoline, and tumbling.
         </p>
-        <a href="#official-entry-form" class="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary/30">
-          Submit Offical Entry Form
+        <a href="#how-to-enter" class="mt-8 inline-flex min-h-[3rem] w-full max-w-md items-center justify-center rounded-lg bg-[linear-gradient(82deg,#9936FD_0%,#484FF3_100%)] px-6 py-3 text-base font-bold text-white transition duration-200 hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-indigo-400/40">
+          Submit Official Entry Form
         </a>
 
       </div>
@@ -125,9 +125,9 @@
   <div class="mx-10 mt-10 lg:my-10 lg:ml-32 lg:mr-10">
     <div class="space-y-6 justify-between text-gray-600 md:flex md:gap-6 md:space-y-0 lg:gap-4 ">
       <div class="md:w-1/2">
-          <p class="mt-8 mb-0 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl">Chance to Win a
+          <p class="mt-8 mb-0 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl">Enter to Win a
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-5xl">
-              ~$250 Prize Pack
+              $250 Prize Pack
             </span>
           </p>
           <p class="mt-8 mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
@@ -175,7 +175,7 @@
       
     </div>
   </div>
-  <div class="m-10 lg:my-10 lg:mr-32 lg:ml-10">
+  <div class="m-10 lg:my-10 lg:mr-32 lg:ml-10" id="how-to-enter">
     <div class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-10 lg:items-center">
       <div class="md:w-7/12 lg:w-1/2">
         <h2 class="text-3xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white text-center">How to Enter the
@@ -229,10 +229,10 @@
             </div>
             <div class="w-5/6">
               <h4 class="font-semibold text-lg text-gray-700 dark:text-blue-400">
-                Step 3: Capture Your Clip in the Coach Bowman App
+                Step 3: Capture Your Clip in the Coach Bowman App and Include Required Watermark
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                Submissions videos must include the Coach Bowman watermark that the app generates. Use the Participate in Giveaway button while clipping. This will add
+                Submissions videos must include the Coach Bowman watermark that the app generates. Use the #CoachBowmanContest button while clipping. This will add
                 the required overlay.
               </p>
             </div>
@@ -248,7 +248,7 @@
             </div>
             <div class="w-5/6">
               <h4 class="font-semibold text-lg text-gray-700 dark:text-purple-400">
-                Step 4: Post on Instagram
+                Step 4: Post on Instagram, Tag @coach.bowman.app, and Hashtag #CoachBowmanContest
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
                 Post your clip as a Reel, tag @coach.bowman.app, and include
@@ -286,7 +286,7 @@
                 Multiple Submissions
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                Participants may submit an unlimited number of unique entries. Once submitted, each entry remains eligible for every drawing that occurs later in that month.
+                Participants may submit an unlimited number of unique entries up to the last drawing in May. Once submitted, each entry remains eligible for every drawing that occurs later in that month.
               </p>
             </div>
           </div>
@@ -378,6 +378,12 @@
               <a href="#terms-and-conditions" class="font-semibold text-primary underline underline-offset-4">
                 Terms and Conditions
               </a>.
+            </span>
+          </label>
+          <label class="mt-4 flex items-start gap-3">
+            <input type="checkbox" name="ageOrParentConsent" required class="mt-1 h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary dark:border-gray-600 dark:bg-gray-800">
+            <span class="text-sm text-gray-700 dark:text-gray-200">
+              I am 18 or older, or I have parent/guardian consent to enter this contest.
             </span>
           </label>
           <button type="submit" class="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white transition hover:opacity-90">
