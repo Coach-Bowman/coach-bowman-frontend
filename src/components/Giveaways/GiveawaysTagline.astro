@@ -24,20 +24,19 @@ import Container from "../Container.astro";
           >
         </h1>
 
-        
-        <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300">
-        The #CoachBowmanContest is a month-long contest in May 2026 with 2 Winners Every Week. 
+        <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300 underline">
+        Open to boys and girls in gymnastics, cheerleading, trampoline, and tumbling.
         </p>
+      
         
         <a
-          href="#how-to-enter"
+          id="official-entry-form-link"
+          href="#entry-form"
           class="mt-8 inline-flex min-h-[3rem] w-full max-w-md items-center justify-center rounded-lg bg-[linear-gradient(82deg,#9936FD_0%,#484FF3_100%)] px-6 py-3 text-base font-bold text-white transition duration-200 hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-indigo-400/40"
         >
           Submit Official Entry Form
         </a>
-        <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300 underline">
-        Open to boys and girls in gymnastics, cheerleading, trampoline, and tumbling.
-        </p>
+        
 
       </div>
         
@@ -79,3 +78,71 @@ import Container from "../Container.astro";
     </div>
   </Container>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollLink = document.getElementById("official-entry-form-link");
+    const target = document.getElementById("entry-form");
+
+    if (!scrollLink || !target) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+
+    const easeInOutCubic = (progress) =>
+      progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+    scrollLink.addEventListener("click", (event) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (prefersReducedMotion.matches) {
+        target.scrollIntoView();
+        history.pushState(null, "", "#entry-form");
+        return;
+      }
+
+      const startY = window.scrollY;
+      const targetY = target.getBoundingClientRect().top + startY;
+      const distance = targetY - startY;
+      const duration = Math.min(2200, Math.max(1200, Math.abs(distance) * 0.8));
+      let startTime = null;
+
+      const step = (timestamp) => {
+        if (startTime === null) {
+          startTime = timestamp;
+        }
+
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeInOutCubic(progress);
+
+        window.scrollTo(0, startY + distance * easedProgress);
+
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+          return;
+        }
+
+        history.pushState(null, "", "#entry-form");
+      };
+
+      window.requestAnimationFrame(step);
+    });
+  });
+</script>
