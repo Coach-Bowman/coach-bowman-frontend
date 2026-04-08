@@ -20,8 +20,7 @@ import Container from "../Container.astro";
           form and agree to the Terms and Conditions.
         </p>
         <form
-          action="#"
-          method="post"
+          id="official-entry-form-card"
           class="mx-auto mt-10 w-full max-w-2xl rounded-2xl border border-gray-200 bg-white/90 p-6 text-left shadow-md backdrop-blur dark:border-gray-700 dark:bg-gray-900/70"
         >
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
@@ -38,6 +37,7 @@ import Container from "../Container.astro";
               </span>
               <input
                 type="text"
+                id="giveaway-first-name"
                 name="firstName"
                 placeholder="First Name"
                 required
@@ -50,6 +50,7 @@ import Container from "../Container.astro";
               </span>
               <input
                 type="text"
+                id="giveaway-last-name"
                 name="lastName"
                 placeholder="Last Name"
                 required
@@ -86,12 +87,65 @@ import Container from "../Container.astro";
             </span>
           </label>
           <button
+            id="official-entry-submit"
             type="submit"
             class="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            Submit (Dummy)
+            Submit Official Entry Form
           </button>
         </form>
+        <div
+          id="official-entry-form-success"
+          class="mx-auto mt-10 hidden w-full max-w-2xl rounded-2xl border border-green-200 bg-white/90 p-6 text-left shadow-md backdrop-blur dark:border-green-900/50 dark:bg-gray-900/70"
+        >
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Official Entry Form Confirmed
+          </h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            Your official entry form has been submitted. To complete your contest entry, finish the remaining steps below.
+          </p>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-xl border border-green-200 bg-green-50 px-4 py-3 dark:border-green-900/50 dark:bg-green-950/30">
+              <p class="flex items-center gap-2 text-sm font-semibold text-green-700 dark:text-green-300">
+                <span
+                  class="flex h-5 w-5 items-center justify-center rounded-full bg-green-600 text-xs text-white"
+                >
+                  ✓
+                </span>
+                <span class="line-through">
+                  Step 1: Submit the Official Entry Form
+                </span>
+              </p>
+              <p class="mt-1 text-sm text-green-700/90 dark:text-green-300/90">
+                Completed. Continue with the remaining steps below to finish your contest entry.
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/70">
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                Step 2: Download the Coach Bowman App
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                Your contest clip must be captured in the Coach Bowman app.
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/70">
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                Step 3: Capture Your Clip with the #CoachBowmanContest Watermark
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                Use the #CoachBowmanContest button while clipping so the required watermark and overlay are included.
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/70">
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                Step 4: Post on Instagram, Tag @coach.bowman.app, and Hashtag #CoachBowmanContest
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                Post your Reel, tag @coach.bowman.app, and include #CoachBowmanContest to complete your entry.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -109,3 +163,30 @@ import Container from "../Container.astro";
     </div>
   </Container>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById(
+      "official-entry-form-card",
+    ) as HTMLFormElement | null;
+    const successCard = document.getElementById("official-entry-form-success");
+    const submitButton = document.getElementById(
+      "official-entry-submit",
+    ) as HTMLButtonElement | null;
+
+    if (!form || !successCard || !submitButton) {
+      return;
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+      await new Promise((resolve) => setTimeout(resolve, 250));
+
+      form.classList.add("hidden");
+      successCard.classList.remove("hidden");
+    });
+  });
+</script>

@@ -9,7 +9,7 @@
     <title>Coach Bowman</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/contests.c5e87e41.css" /><script type="module">const f=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),D=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),p=document.getElementById("giveaway-progress-highlight"),x=()=>new Date,E=r?.dataset.questionMark||"";if(f&&r&&D&&y&&p){const u=(()=>{const e=x(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),g=new Date(u,4,1,0,0,0,0),w=new Date(u,4,31,23,59,59,999),l=(e=>{const t=[];for(let n=1;n<=31;n+=1){const m=new Date(e,4,n);m.getDay()===0&&t.push(m)}return t.slice(1,5)})(u),T=()=>{const e=w.getTime()-g.getTime();r.innerHTML="",l.forEach((t,n)=>{const h=(t.getTime()-g.getTime())/e*100,i=(n+.5)/l.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${i}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${i}%`,a.style.transform="translate(-10%, -180%)",a.style.zIndex="1",a.title="Winner headshot",a.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const d=document.createElement("span");d.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",d.style.left=`${h}%`,d.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const c=document.createElement("span");c.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",c.style.left=`${h}%`,c.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(a),r.appendChild(s),r.appendChild(d),r.appendChild(c)})},b=()=>{const e=x(),t=w.getTime()-g.getTime(),n=e.getTime()-g.getTime(),h=Math.min(Math.max(n,0),t)/t*100;f.style.width=`${h}%`;const i=l.find(o=>e<=o),s=1e3*60*60*24,a=i?(i.getTime()-e.getTime())/s:0,d=Math.max(0,Math.ceil(a));if(l.some(o=>o.getDate()===e.getDate()&&o.getMonth()===e.getMonth()&&o.getFullYear()===e.getFullYear()))y.textContent="",p.textContent="New Winners Announced!";else{const o=l.length>0&&e<l[0];y.textContent=o?"First Two Winners in ":"Next Two Winners in ",p.textContent=`${d} Days`}};T(),b(),setInterval(()=>{b()},1e3)}
+  <link rel="stylesheet" href="/assets/contests.3c9ba483.css" /><script type="module">const x=document.getElementById("giveaway-progress-fill"),l=document.getElementById("giveaway-progress-points"),I=document.getElementById("giveaway-progress-label"),f=document.getElementById("giveaway-progress-text"),w=document.getElementById("giveaway-progress-highlight"),D=()=>new Date,T=l?.dataset.questionMark||"";if(x&&l&&I&&f&&w){const d=(()=>{const e=D(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),a=new Date(d,4,1,0,0,0,0),y=new Date(d,4,31,23,59,59,999),i=(e=>{const t=[];for(let n=1;n<=31;n+=1){const h=new Date(e,4,n);h.getDay()===0&&t.push(h)}return t.slice(1,5)})(d),M=()=>{const e=y.getTime()-a.getTime();l.innerHTML="",i.forEach((t,n)=>{const p=(t.getTime()-a.getTime())/e*100,m=(n+.5)/i.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${m}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${T}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const o=document.createElement("span");o.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",o.style.left=`${m}%`,o.style.transform="translate(-10%, -180%)",o.style.zIndex="1",o.title="Winner headshot",o.innerHTML=`<img src="${T}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const c=document.createElement("span");c.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",c.style.left=`${p}%`,c.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const g=document.createElement("span");g.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",g.style.left=`${p}%`,g.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),l.appendChild(o),l.appendChild(s),l.appendChild(c),l.appendChild(g)})},E=()=>{const e=D(),t=y.getTime()-a.getTime(),n=e.getTime()-a.getTime(),p=Math.min(Math.max(n,0),t)/t*100;x.style.width=`${p}%`;const m=i.find(r=>e<=r),s=1e3*60*60*24,o=m?(m.getTime()-e.getTime())/s:0,c=Math.max(0,Math.ceil(o));if(i.some(r=>r.getDate()===e.getDate()&&r.getMonth()===e.getMonth()&&r.getFullYear()===e.getFullYear()))f.textContent="",w.textContent="New Winners Announced!";else{const r=i.length>0&&e<i[0];f.textContent=r?"First Two Winners in ":"Next Two Winners in ",w.textContent=`${c} Days`}};M(),E(),setInterval(()=>{E()},1e3)}document.addEventListener("DOMContentLoaded",()=>{const u=document.getElementById("official-entry-form-card"),d=document.getElementById("official-entry-form-success"),a=document.getElementById("official-entry-submit");!u||!d||!a||u.addEventListener("submit",async y=>{y.preventDefault(),a.disabled=!0,a.textContent="Submitting...",await new Promise(b=>setTimeout(b,250)),u.classList.add("hidden"),d.classList.remove("hidden")})});
 </script></head>
   <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
     <header class="astro-GUVEAZRX">
@@ -93,11 +93,15 @@
 
         
         <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300">
-        Enter the #CoachBowmanContest, a month-long giveaway in May 2026 with 2 winners every week. Open to boys and girls in gymnastics, cheerleading, trampoline, and tumbling.
+        The #CoachBowmanContest is a month-long contest in May 2026 with 2 Winners Every Week. 
         </p>
+        
         <a href="#how-to-enter" class="mt-8 inline-flex min-h-[3rem] w-full max-w-md items-center justify-center rounded-lg bg-[linear-gradient(82deg,#9936FD_0%,#484FF3_100%)] px-6 py-3 text-base font-bold text-white transition duration-200 hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-indigo-400/40">
           Submit Official Entry Form
         </a>
+        <p class="mt-8 text-center text-xl text-gray-600 dark:text-gray-300 underline">
+        Open to boys and girls in gymnastics, cheerleading, trampoline, and tumbling.
+        </p>
 
       </div>
         
@@ -133,7 +137,7 @@
           <p class="mt-8 mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
           Exclusive Coach Bowman Training Tank, Tripod, One Year Coach Bowman Subscription, and a $100 Amazon Giftcard.
         </p>
-          <img src="/assets/prizes.af997e97.png" alt="dashboard screenshot" class="mx-auto mt-0 w-full max-w-2xl md:mt-0">
+          <img src="/assets/prizes.c02fa5aa.png" alt="dashboard screenshot" class="mx-auto mt-0 w-full max-w-2xl md:mt-0">
         </div>
       <div class="md:w-1/2">
           <p class="mt-8 mb-0 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl">
@@ -229,7 +233,7 @@
             </div>
             <div class="w-5/6">
               <h4 class="font-semibold text-lg text-gray-700 dark:text-blue-400">
-                Step 3: Capture Your Clip in the Coach Bowman App and Include Required Watermark
+                Step 3: Capture Your Clip with the #CoachBowmanContest Watermark (See Video)
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
                 Submissions videos must include the Coach Bowman watermark that the app generates. Use the #CoachBowmanContest button while clipping. This will add
@@ -349,7 +353,7 @@
           To officially enter #CoachBowmanContest, you must complete this
           form and agree to the Terms and Conditions.
         </p>
-        <form action="#" method="post" class="mx-auto mt-10 w-full max-w-2xl rounded-2xl border border-gray-200 bg-white/90 p-6 text-left shadow-md backdrop-blur dark:border-gray-700 dark:bg-gray-900/70">
+        <form id="official-entry-form-card" class="mx-auto mt-10 w-full max-w-2xl rounded-2xl border border-gray-200 bg-white/90 p-6 text-left shadow-md backdrop-blur dark:border-gray-700 dark:bg-gray-900/70">
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
             Official Entry Form
           </h2>
@@ -362,13 +366,13 @@
               <span class="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-200">
                 First Name
               </span>
-              <input type="text" name="firstName" placeholder="First Name" required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+              <input type="text" id="giveaway-first-name" name="firstName" placeholder="First Name" required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
             </label>
             <label class="block">
               <span class="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-200">
                 Last Name
               </span>
-              <input type="text" name="lastName" placeholder="Last Name" required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+              <input type="text" id="giveaway-last-name" name="lastName" placeholder="Last Name" required class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
             </label>
           </div>
           <label class="mt-5 flex items-start gap-3">
@@ -386,10 +390,57 @@
               I am 18 or older, or I have parent/guardian consent to enter this contest.
             </span>
           </label>
-          <button type="submit" class="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white transition hover:opacity-90">
-            Submit (Dummy)
+          <button id="official-entry-submit" type="submit" class="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white transition hover:opacity-90">
+            Submit Official Entry Form
           </button>
         </form>
+        <div id="official-entry-form-success" class="mx-auto mt-10 hidden w-full max-w-2xl rounded-2xl border border-green-200 bg-white/90 p-6 text-left shadow-md backdrop-blur dark:border-green-900/50 dark:bg-gray-900/70">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            Official Entry Form Confirmed
+          </h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            Your official entry form has been submitted. To complete your contest entry, finish the remaining steps below.
+          </p>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-xl border border-green-200 bg-green-50 px-4 py-3 dark:border-green-900/50 dark:bg-green-950/30">
+              <p class="flex items-center gap-2 text-sm font-semibold text-green-700 dark:text-green-300">
+                <span class="flex h-5 w-5 items-center justify-center rounded-full bg-green-600 text-xs text-white">
+                  ✓
+                </span>
+                <span class="line-through">
+                  Step 1: Submit the Official Entry Form
+                </span>
+              </p>
+              <p class="mt-1 text-sm text-green-700/90 dark:text-green-300/90">
+                Completed. Continue with the remaining steps below to finish your contest entry.
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/70">
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                Step 2: Download the Coach Bowman App
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                Your contest clip must be captured in the Coach Bowman app.
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/70">
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                Step 3: Capture Your Clip with the #CoachBowmanContest Watermark (See Video)
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                Use the #CoachBowmanContest button while clipping so the required watermark and overlay are included.
+              </p>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800/70">
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                Step 4: Post on Instagram, Tag @coach.bowman.app, and Hashtag #CoachBowmanContest
+              </p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                Post your Reel, tag @coach.bowman.app, and include #CoachBowmanContest to complete your entry.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div><div aria-hidden="true" class="relative inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 -z-10 opacity-30 dark:opacity-20">
       <div class="absolute inset-0 blur-[106px] h-56 bg-gradient-to-br from-primary to-cyan-400">
@@ -399,6 +450,8 @@
     </div>
 </div>
 </div>
+
+
   </main>
     <footer class="py-20 md:py-40">
   <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
