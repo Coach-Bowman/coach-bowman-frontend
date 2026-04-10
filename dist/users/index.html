@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="astro-DW52LVGJ">
+<html lang="en" class="astro-J4ZP6SUA">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -9,7 +9,19 @@
     <title>Coach Bowman</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/contests.3c9ba483.css" /><script type="module">window.fetchUsers=async function(){const e=document.getElementById("user-table-body"),a="/api/users";console.log("Fetching users from:",a);try{const r=await fetch(a);if(!r.ok)throw new Error(`HTTP error! status: ${r.status}`);const s=await r.json();s.length>0?e.innerHTML=s.map(t=>`
+    <script>
+      if (window.location.hash.length > 1) {
+        document.documentElement.classList.add("instant-hash-scroll");
+        window.addEventListener(
+          "load",
+          () => {
+            document.documentElement.classList.remove("instant-hash-scroll");
+          },
+          { once: true },
+        );
+      }
+    </script>
+  <link rel="stylesheet" href="/assets/contests.8f9d9cf7.css" /><script type="module">window.fetchUsers=async function(){const e=document.getElementById("user-table-body"),a="/api/users";console.log("Fetching users from:",a);try{const r=await fetch(a);if(!r.ok)throw new Error(`HTTP error! status: ${r.status}`);const s=await r.json();s.length>0?e.innerHTML=s.map(t=>`
             <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
               <td class="px-4 py-2 border-b dark:border-gray-700">${t.id}</td>
               <td class="px-4 py-2 border-b dark:border-gray-700">${t.name}</td>
@@ -31,7 +43,7 @@
         </tr>
       `,console.error(r)}};
 </script></head>
-  <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
+  <body class="bg-white dark:bg-gray-900 astro-J4ZP6SUA">
     <header class="astro-GUVEAZRX">
   <nav class="z-10 w-full absolute astro-GUVEAZRX">
     <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">

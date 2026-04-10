@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="astro-DW52LVGJ">
+<html lang="en" class="astro-J4ZP6SUA">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -9,9 +9,21 @@
     <title>Coach Bowman</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/contests.3c9ba483.css" /><script type="module">document.addEventListener("DOMContentLoaded",()=>{const r=document.querySelector("form"),t=document.getElementById("primary-download"),n=document.getElementById("primary-download-span"),o=document.getElementById("secondary-download"),s=document.getElementById("secondary-download-span"),d="https://coachbowman-backend-24wnt.ondigitalocean.app/api/v1/downloadformentry";r.addEventListener("submit",async l=>{l.preventDefault();const a={name:document.getElementById("name").value,email:document.getElementById("email").value,sport:document.getElementById("sport").value};console.log("Form data:",a);try{const e=await fetch(d,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(a)});if(!e.ok)throw new Error(`Error: ${e.statusText}`);t.disabled=!0,n.textContent="1. Thank you!",t.classList.replace("before:bg-primary","before:bg-primary/10"),n.classList.replace("text-white","text-primary"),o.classList.replace("before:bg-primary/10","before:bg-primary"),s.classList.replace("text-primary","text-white"),t.type="button",o.type="button",o.addEventListener("click",()=>{window.open("https://testflight.apple.com/join/5XVCpmd8","_blank")}),console.log("Form submitted successfully!")}catch(e){console.error("Failed to submit the form:",e),alert("There was an error submitting the form. Please try again.")}})});
+    <script>
+      if (window.location.hash.length > 1) {
+        document.documentElement.classList.add("instant-hash-scroll");
+        window.addEventListener(
+          "load",
+          () => {
+            document.documentElement.classList.remove("instant-hash-scroll");
+          },
+          { once: true },
+        );
+      }
+    </script>
+  <link rel="stylesheet" href="/assets/contests.8f9d9cf7.css" /><script type="module">document.addEventListener("DOMContentLoaded",()=>{const r=document.querySelector("form"),t=document.getElementById("primary-download"),n=document.getElementById("primary-download-span"),o=document.getElementById("secondary-download"),s=document.getElementById("secondary-download-span"),d="https://coachbowman-backend-24wnt.ondigitalocean.app/api/v1/downloadformentry";r.addEventListener("submit",async l=>{l.preventDefault();const a={name:document.getElementById("name").value,email:document.getElementById("email").value,sport:document.getElementById("sport").value};console.log("Form data:",a);try{const e=await fetch(d,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(a)});if(!e.ok)throw new Error(`Error: ${e.statusText}`);t.disabled=!0,n.textContent="1. Thank you!",t.classList.replace("before:bg-primary","before:bg-primary/10"),n.classList.replace("text-white","text-primary"),o.classList.replace("before:bg-primary/10","before:bg-primary"),s.classList.replace("text-primary","text-white"),t.type="button",o.type="button",o.addEventListener("click",()=>{window.open("https://testflight.apple.com/join/5XVCpmd8","_blank")}),console.log("Form submitted successfully!")}catch(e){console.error("Failed to submit the form:",e),alert("There was an error submitting the form. Please try again.")}})});
 </script></head>
-  <body class="bg-white dark:bg-gray-900 astro-DW52LVGJ">
+  <body class="bg-white dark:bg-gray-900 astro-J4ZP6SUA">
     <header class="astro-GUVEAZRX">
   <nav class="z-10 w-full absolute astro-GUVEAZRX">
     <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">

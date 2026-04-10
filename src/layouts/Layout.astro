@@ -20,6 +20,18 @@ import AppHeader from "../components/AppHeader.astro";
       href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      if (window.location.hash.length > 1) {
+        document.documentElement.classList.add("instant-hash-scroll");
+        window.addEventListener(
+          "load",
+          () => {
+            document.documentElement.classList.remove("instant-hash-scroll");
+          },
+          { once: true },
+        );
+      }
+    </script>
   </head>
   <body class="bg-white dark:bg-gray-900">
     <AppHeader />
@@ -31,6 +43,10 @@ import AppHeader from "../components/AppHeader.astro";
   html {
     font-family: Urbanist, sans-serif;
     scroll-behavior: smooth;
+  }
+
+  html.instant-hash-scroll {
+    scroll-behavior: auto;
   }
 
   body {
