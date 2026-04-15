@@ -31,6 +31,8 @@ import question_mark from "../../assets/question_mark.jpg";
           <img
             src={prizes}
             alt="dashboard screenshot"
+            width="1500"
+            height="1500"
             class="mx-auto mt-0 w-full max-w-2xl md:mt-0"
           />
           <p class="mt-8 mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
@@ -59,6 +61,8 @@ import question_mark from "../../assets/question_mark.jpg";
           <video
           class="mx-auto w-full max-w-2xl dark:hidden"
           src={stickCellyVideoLight}
+          width="2000"
+          height="2880"
           autoplay
           loop
           muted
@@ -67,6 +71,8 @@ import question_mark from "../../assets/question_mark.jpg";
         <video
           class="mx-auto hidden w-full max-w-2xl dark:block"
           src={stickCellyVideoDark}
+          width="2000"
+          height="2880"
           autoplay
           loop
           muted
@@ -116,13 +122,35 @@ import question_mark from "../../assets/question_mark.jpg";
       
     </div>
   </div>
-  <div class="m-10 lg:my-10 lg:mr-32 lg:ml-10" id="how-to-enter">
+  <div class="m-10 lg:my-10 lg:ml-32 lg:mr-10" >
     <div
       class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-10 lg:items-center"
     >
+    <div class="md:w-5/12 lg:w-1/2">
+        <video
+          class="mx-auto mt-12 w-full max-w-2xl dark:hidden md:mt-0"
+          src={clippingVideoLight}
+          width="2000"
+          height="2880"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+        <video
+          class="mx-auto mt-12 hidden w-full max-w-2xl dark:block md:mt-0"
+          src={clippingVideoDark}
+          width="2000"
+          height="2880"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+      </div>
       <div class="md:w-7/12 lg:w-1/2">
-        <h2 id="how-to-enter"
-          class="text-3xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white text-center"
+        <h2
+          class="text-3xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white text-center" id="how-to-enter"
         >How to Enter the
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold"
@@ -147,8 +175,8 @@ import question_mark from "../../assets/question_mark.jpg";
                 Step 1: Download the Free Coach Bowman App
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                All submission must be captured using the Coach Bowman App. 
-               The Coach Bowman app is free to use. No payment is required to qualify for this contest. 
+                All submissions must be captured using the Coach Bowman App. 
+               No payment is required to qualify for this contest. 
               </p>
             </div>
           </div>
@@ -171,7 +199,7 @@ import question_mark from "../../assets/question_mark.jpg";
                 Step 2: Capture Your Stick & Celly in the App
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                Use the Coach Bowman app to capture a stuck dismount followed by your favorite celebration.
+                Use the Coach Bowman app to capture a stuck dismount followed by your favorite celebration. Best celly wins!
               </p>
             </div>
           </div>
@@ -225,24 +253,7 @@ import question_mark from "../../assets/question_mark.jpg";
           </div>
         </div>
       </div>
-      <div class="md:w-5/12 lg:w-1/2">
-        <video
-          class="mx-auto mt-12 w-full max-w-2xl dark:hidden md:mt-0"
-          src={clippingVideoLight}
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-        <video
-          class="mx-auto mt-12 hidden w-full max-w-2xl dark:block md:mt-0"
-          src={clippingVideoDark}
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-      </div>
+  
     </div>
   </div>
   <div class="m-10 lg:my-10 lg:ml-32 lg:mr-10">
@@ -275,7 +286,7 @@ import question_mark from "../../assets/question_mark.jpg";
                 Multiple Submissions
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                Participants may submit an unlimited number of unique entries up to the last drawing in May. Once submitted, each entry remains eligible for every drawing that occurs later in that month.
+                Participants may submit an unlimited number of unique entries up to the last drawing in June. 
               </p>
             </div>
           </div>
@@ -302,7 +313,7 @@ import question_mark from "../../assets/question_mark.jpg";
                 How Winners Are Picked
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                We pick the most creative, funny, or unique entries. It is
+                Best celly wins! We pick the most creative, funny, or unique entries. It is
                 not about the hardest skill or highest score. 
               </p>
             </div>
