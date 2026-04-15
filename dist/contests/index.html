@@ -21,7 +21,7 @@
         );
       }
     </script>
-  <link rel="stylesheet" href="/assets/contests.9f9c177f.css" /><script type="module">const f=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),D=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),p=document.getElementById("giveaway-progress-highlight"),x=()=>new Date,E=r?.dataset.questionMark||"";if(f&&r&&D&&y&&p){const u=(()=>{const e=x(),t=e.getFullYear(),n=new Date(t,4,31,23,59,59,999);return e>n?t+1:t})(),g=new Date(u,4,1,0,0,0,0),w=new Date(u,4,31,23,59,59,999),l=(e=>{const t=[];for(let n=1;n<=31;n+=1){const m=new Date(e,4,n);m.getDay()===0&&t.push(m)}return t.slice(1,5)})(u),T=()=>{const e=w.getTime()-g.getTime();r.innerHTML="",l.forEach((t,n)=>{const h=(t.getTime()-g.getTime())/e*100,i=(n+.5)/l.length*100,s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${i}%`,s.style.transform="translate(-90%, -180%)",s.style.zIndex="2",s.title="Winner headshot",s.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const a=document.createElement("span");a.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",a.style.left=`${i}%`,a.style.transform="translate(-10%, -180%)",a.style.zIndex="1",a.title="Winner headshot",a.innerHTML=`<img src="${E}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const d=document.createElement("span");d.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",d.style.left=`${h}%`,d.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const c=document.createElement("span");c.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",c.style.left=`${h}%`,c.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(a),r.appendChild(s),r.appendChild(d),r.appendChild(c)})},b=()=>{const e=x(),t=w.getTime()-g.getTime(),n=e.getTime()-g.getTime(),h=Math.min(Math.max(n,0),t)/t*100;f.style.width=`${h}%`;const i=l.find(o=>e<=o),s=1e3*60*60*24,a=i?(i.getTime()-e.getTime())/s:0,d=Math.max(0,Math.ceil(a));if(l.some(o=>o.getDate()===e.getDate()&&o.getMonth()===e.getMonth()&&o.getFullYear()===e.getFullYear()))y.textContent="",p.textContent="New Winners Announced!";else{const o=l.length>0&&e<l[0];y.textContent=o?"First Two Winners in ":"Next Two Winners in ",p.textContent=`${d} Days`}};T(),b(),setInterval(()=>{b()},1e3)}
+  <link rel="stylesheet" href="/assets/contests.9f9c177f.css" /><script type="module">const x=document.getElementById("giveaway-progress-fill"),r=document.getElementById("giveaway-progress-points"),C=document.getElementById("giveaway-progress-label"),y=document.getElementById("giveaway-progress-text"),w=document.getElementById("giveaway-progress-highlight"),f=5,T=()=>new Date,D=r?.dataset.questionMark||"";if(x&&r&&C&&y&&w){const u=e=>new Date(e,f+1,0,23,59,59,999),p=(()=>{const e=T(),t=e.getFullYear(),a=u(t);return e>a?t+1:t})(),h=new Date(p,f,1,0,0,0,0),b=u(p),d=(e=>{const t=[],a=u(e).getDate();for(let c=1;c<=a;c+=1){const o=new Date(e,f,c);o.getDay()===0&&t.push(o)}return t})(p),M=()=>{const e=b.getTime()-h.getTime();r.innerHTML="",d.forEach((t,a)=>{const o=(t.getTime()-h.getTime())/e*100,g=(a+.5)/d.length*100,n=document.createElement("span");n.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",n.style.left=`${g}%`,n.style.transform="translate(-90%, -180%)",n.style.zIndex="2",n.title="Winner headshot",n.innerHTML=`<img src="${D}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const s=document.createElement("span");s.className="absolute top-1/2 h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-dashed border-primary/70 bg-gray-50 shadow-md dark:bg-gray-800",s.style.left=`${g}%`,s.style.transform="translate(-10%, -180%)",s.style.zIndex="1",s.title="Winner headshot",s.innerHTML=`<img src="${D}" alt="Winner placeholder" class="h-full w-full rounded-full object-cover" />`;const i=document.createElement("span");i.className="absolute top-1/2 h-4 w-4 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary bg-white dark:bg-gray-900",i.style.left=`${o}%`,i.title=t.toLocaleDateString(void 0,{month:"short",day:"numeric"});const m=document.createElement("span");m.className="absolute top-6 -translate-x-1/2 text-[11px] font-medium text-gray-600 dark:text-gray-300",m.style.left=`${o}%`,m.textContent=t.toLocaleDateString(void 0,{month:"short",day:"numeric"}),r.appendChild(s),r.appendChild(n),r.appendChild(i),r.appendChild(m)})},E=()=>{const e=T(),t=b.getTime()-h.getTime(),a=e.getTime()-h.getTime(),o=Math.min(Math.max(a,0),t)/t*100;x.style.width=`${o}%`;const g=d.find(l=>e<=l),n=1e3*60*60*24,s=g?(g.getTime()-e.getTime())/n:0,i=Math.max(0,Math.ceil(s));if(d.some(l=>l.getDate()===e.getDate()&&l.getMonth()===e.getMonth()&&l.getFullYear()===e.getFullYear()))y.textContent="",w.textContent="New Winners Announced!";else{const l=d.length>0&&e<d[0];y.textContent=l?"First Two Winners in ":"Next Two Winners in ",w.textContent=`${i} Days`}};M(),E(),setInterval(()=>{E()},1e3)}
 </script></head>
   <body class="bg-white dark:bg-gray-900 astro-J4ZP6SUA">
     <header class="astro-GUVEAZRX">
@@ -104,7 +104,7 @@
         </h1>
 
          <p class="mt-4 text-center text-xl text-gray-600 dark:text-gray-300 ">
-        Two Winners Every Week in June
+        Enter the #StickCellyContest, a month-long contest with over $2,000 in prizes. Two New Winners Every Week in June.
         </p>
       
         
@@ -170,31 +170,19 @@
         </p>
         </div>
         </div>
-        <div class="mx-auto py-8 border-y border-gray-100 dark:border-gray-800 mt-6 w-full max-w-5xl">
-          <p id="giveaway-progress-label" class="mb-24 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-6xl md:mb-32">
-            <span id="giveaway-progress-text">Two New Winners in </span>
-            <span id="giveaway-progress-highlight" class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-6xl">
-              0 Days
-            </span>
-          </p>
-          <div class="relative h-3 overflow-visible rounded-full bg-gray-200 dark:bg-gray-700">
-            <div id="giveaway-progress-fill" class="h-full rounded-full bg-primary transition-all duration-500" style="width: 0%;">
-            </div>
-            <div id="giveaway-progress-points" class="absolute inset-0" data-question-mark="/assets/question_mark.f83a1a6c.jpg"></div>
-          </div>
-           <div class="mt-2 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300">
-          </div>
-        </div>
-        
     <div class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-4 lg:items-center">
       
       
     </div>
   </div>
-  <div class="m-10 lg:my-10 lg:mr-32 lg:ml-10" id="how-to-enter">
+  <div class="m-10 lg:my-10 lg:ml-32 lg:mr-10">
     <div class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-10 lg:items-center">
+    <div class="md:w-5/12 lg:w-1/2">
+        <video class="mx-auto mt-12 w-full max-w-2xl dark:hidden md:mt-0" src="/assets/sikra-clipping-light.466d2e47.mp4" width="2000" height="2880" autoplay loop muted playsinline></video>
+        <video class="mx-auto mt-12 hidden w-full max-w-2xl dark:block md:mt-0" src="/assets/sikra-clipping-dark.94f88cd1.mp4" width="2000" height="2880" autoplay loop muted playsinline></video>
+      </div>
       <div class="md:w-7/12 lg:w-1/2">
-        <h2 class="text-3xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white text-center">How to Enter the
+        <h2 class="text-3xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white text-center" id="how-to-enter">How to Enter the
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold">#StickCellyContest</span>
         </h2>
         <div class="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
@@ -211,8 +199,8 @@
                 Step 1: Download the Free Coach Bowman App
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                All submission must be captured using the Coach Bowman App. 
-               The Coach Bowman app is free to use. No payment is required to qualify for this contest. 
+                All submissions must be captured using the Coach Bowman App. 
+               No payment is required to qualify for this contest. 
               </p>
             </div>
           </div>
@@ -231,7 +219,7 @@
                 Step 2: Capture Your Stick & Celly in the App
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                Use the Coach Bowman app to capture a stuck dismount followed by your favorite celebration.
+                Use the Coach Bowman app to capture a stuck dismount followed by your favorite celebration. Best celly wins!
               </p>
             </div>
           </div>
@@ -277,10 +265,7 @@
           </div>
         </div>
       </div>
-      <div class="md:w-5/12 lg:w-1/2">
-        <video class="mx-auto mt-12 w-full max-w-2xl dark:hidden md:mt-0" src="/assets/sikra-clipping-light.466d2e47.mp4" width="2000" height="2880" autoplay loop muted playsinline></video>
-        <video class="mx-auto mt-12 hidden w-full max-w-2xl dark:block md:mt-0" src="/assets/sikra-clipping-dark.94f88cd1.mp4" width="2000" height="2880" autoplay loop muted playsinline></video>
-      </div>
+  
     </div>
   </div>
   <div class="m-10 lg:my-10 lg:ml-32 lg:mr-10">
@@ -305,7 +290,7 @@
                 Multiple Submissions
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                Participants may submit an unlimited number of unique entries up to the last drawing in May. Once submitted, each entry remains eligible for every drawing that occurs later in that month.
+                Participants may submit an unlimited number of unique entries up to the last drawing in June. 
               </p>
             </div>
           </div>
@@ -326,7 +311,7 @@
                 How Winners Are Picked
               </h4>
               <p class="text-gray-500 dark:text-gray-400">
-                We pick the most creative, funny, or unique entries. It is
+                Best celly wins! We pick the most creative, funny, or unique entries. It is
                 not about the hardest skill or highest score. 
               </p>
             </div>
@@ -349,6 +334,23 @@
           </div>
          
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="mx-10">
+    <div class="mx-auto py-8 border-y border-gray-100 dark:border-gray-800 mt-6 w-full max-w-5xl">
+      <p id="giveaway-progress-label" class="mb-24 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-6xl md:mb-32">
+        <span id="giveaway-progress-text">Two New Winners in </span>
+        <span id="giveaway-progress-highlight" class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-6xl">
+          0 Days
+        </span>
+      </p>
+      <div class="relative h-3 overflow-visible rounded-full bg-gray-200 dark:bg-gray-700">
+        <div id="giveaway-progress-fill" class="h-full rounded-full bg-primary transition-all duration-500" style="width: 0%;">
+        </div>
+        <div id="giveaway-progress-points" class="absolute inset-0" data-question-mark="/assets/question_mark.f83a1a6c.jpg"></div>
+      </div>
+       <div class="mt-2 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300">
       </div>
     </div>
   </div>

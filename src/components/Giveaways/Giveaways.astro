@@ -83,38 +83,6 @@ import question_mark from "../../assets/question_mark.jpg";
         </p>
         </div>
         </div>
-        <div class="mx-auto py-8 border-y border-gray-100 dark:border-gray-800 mt-6 w-full max-w-5xl">
-          <p
-            id="giveaway-progress-label"
-            class="mb-24 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-6xl md:mb-32"
-          >
-            <span id="giveaway-progress-text">Two New Winners in </span>
-            <span
-              id="giveaway-progress-highlight"
-              class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-6xl"
-            >
-              0 Days
-            </span>
-          </p>
-          <div class="relative h-3 overflow-visible rounded-full bg-gray-200 dark:bg-gray-700">
-            <div
-              id="giveaway-progress-fill"
-              class="h-full rounded-full bg-primary transition-all duration-500"
-              style="width: 0%;"
-            >
-            </div>
-            <div
-              id="giveaway-progress-points"
-              class="absolute inset-0"
-              data-question-mark={question_mark}
-            ></div>
-          </div>
-           <div
-            class="mt-2 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300"
-          >
-          </div>
-        </div>
-        
     <div
       class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-4 lg:items-center"
     >
@@ -343,6 +311,39 @@ import question_mark from "../../assets/question_mark.jpg";
       </div>
     </div>
   </div>
+  <div class="mx-10">
+    <div class="mx-auto py-8 border-y border-gray-100 dark:border-gray-800 mt-6 w-full max-w-5xl">
+      <p
+        id="giveaway-progress-label"
+        class="mb-24 text-center text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-6xl md:mb-32"
+      >
+        <span id="giveaway-progress-text">Two New Winners in </span>
+        <span
+          id="giveaway-progress-highlight"
+          class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold text-4xl md:text-5xl xl:text-6xl"
+        >
+          0 Days
+        </span>
+      </p>
+      <div class="relative h-3 overflow-visible rounded-full bg-gray-200 dark:bg-gray-700">
+        <div
+          id="giveaway-progress-fill"
+          class="h-full rounded-full bg-primary transition-all duration-500"
+          style="width: 0%;"
+        >
+        </div>
+        <div
+          id="giveaway-progress-points"
+          class="absolute inset-0"
+          data-question-mark={question_mark}
+        ></div>
+      </div>
+       <div
+        class="mt-2 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300"
+      >
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -352,8 +353,9 @@ import question_mark from "../../assets/question_mark.jpg";
   const progressLabelElement = document.getElementById("giveaway-progress-label");
   const progressLabelTextElement = document.getElementById("giveaway-progress-text");
   const progressLabelHighlightElement = document.getElementById("giveaway-progress-highlight");
+  const CHALLENGE_MONTH_INDEX = 5; // June. JavaScript months are zero-based.
   const MANUAL_TEST_DATE = "";
-  // const MANUAL_TEST_DATE = "2026-05-31T12:00:00";
+  // const MANUAL_TEST_DATE = "2026-06-30T12:00:00";
   const getNow = () => (MANUAL_TEST_DATE ? new Date(MANUAL_TEST_DATE) : new Date());
   const questionMarkImage = progressPointsElement?.dataset.questionMark || "";
 
@@ -364,27 +366,31 @@ import question_mark from "../../assets/question_mark.jpg";
     progressLabelTextElement &&
     progressLabelHighlightElement
   ) {
+    const getChallengeEnd = (year) =>
+      new Date(year, CHALLENGE_MONTH_INDEX + 1, 0, 23, 59, 59, 999);
+
     const getChallengeYear = () => {
       const now = getNow();
       const currentYear = now.getFullYear();
-      const mayEnd = new Date(currentYear, 4, 31, 23, 59, 59, 999);
-      return now > mayEnd ? currentYear + 1 : currentYear;
+      const challengeEndThisYear = getChallengeEnd(currentYear);
+      return now > challengeEndThisYear ? currentYear + 1 : currentYear;
     };
 
     const challengeYear = getChallengeYear();
-    const challengeStart = new Date(challengeYear, 4, 1, 0, 0, 0, 0);
-    const challengeEnd = new Date(challengeYear, 4, 31, 23, 59, 59, 999);
+    const challengeStart = new Date(challengeYear, CHALLENGE_MONTH_INDEX, 1, 0, 0, 0, 0);
+    const challengeEnd = getChallengeEnd(challengeYear);
 
-    const getSundaysInMay = (year) => {
+    const getSundaysInChallengeMonth = (year) => {
       const sundays = [];
-      for (let day = 1; day <= 31; day += 1) {
-        const date = new Date(year, 4, day);
+      const lastDayOfMonth = getChallengeEnd(year).getDate();
+      for (let day = 1; day <= lastDayOfMonth; day += 1) {
+        const date = new Date(year, CHALLENGE_MONTH_INDEX, day);
         if (date.getDay() === 0) sundays.push(date);
       }
-      return sundays.slice(1, 5);
+      return sundays;
     };
 
-    const sundays = getSundaysInMay(challengeYear);
+    const sundays = getSundaysInChallengeMonth(challengeYear);
 
     const initProgressPoints = () => {
       const totalDuration = challengeEnd.getTime() - challengeStart.getTime();
