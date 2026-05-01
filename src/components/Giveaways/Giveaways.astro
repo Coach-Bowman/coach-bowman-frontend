@@ -1,7 +1,6 @@
 ---
-import Container from "../Container.astro";
 import unconnected_tripod from "../../assets/unconnected-tripod.png";
-import beam from "../../assets/SOPHIE-BEAM.png";
+import instagram from "../../assets/instagram.png";
 import stickCellyVideoLight from "../../assets/sikra-stick-celly-light.mp4";
 import stickCellyVideoDark from "../../assets/sikra-stick-celly-dark.mp4";
 import clippingVideoLight from "../../assets/sikra-clipping-light.mp4";
@@ -90,139 +89,300 @@ import question_mark from "../../assets/question_mark.jpg";
       
     </div>
   </div>
-  <div class="m-10 lg:my-10 lg:ml-32 lg:mr-10" >
-    <div
-      class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-10 lg:items-center"
+  <div class="my-10 lg:my-10 lg:ml-32 lg:mr-10">
+    <section
+      class="mx-auto max-w-6xl"
+      id="how-to-enter"
     >
-    <div class="md:w-5/12 lg:w-1/2">
-        <video
-          class="mx-auto mt-12 w-full max-w-2xl dark:hidden md:mt-0"
-          src={clippingVideoLight}
-          width="2000"
-          height="2880"
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-        <video
-          class="mx-auto mt-12 hidden w-full max-w-2xl dark:block md:mt-0"
-          src={clippingVideoDark}
-          width="2000"
-          height="2880"
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-      </div>
-      <div class="md:w-7/12 lg:w-1/2">
+      <div class="mx-auto max-w-4xl text-center">
         <h2
-          class="text-3xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white text-center" id="how-to-enter"
-        >How to Enter the
+          class="text-4xl font-bold text-gray-900 md:text-4xl xl:text-5xl dark:text-white"
+        >
+          How to Enter the
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold"
             >#StickCellyContest</span
           >
         </h2>
-        <div class="divide-y space-y-4 divide-gray-100 dark:divide-gray-800">
-          <div class="pt-8 flex gap-4 md:items-center">
-            <div
-              class="w-12 h-12 flex gap-4 rounded-full bg-sky-200 dark:bg-sky-900/30"
-            >
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-sky-700 dark:text-sky-400">
-                <path d="M12 3v12"></path>
-                <path d="M8 11l4 4 4-4"></path>
-                <rect x="4" y="18" width="16" height="3" rx="1.5"></rect>
-              </svg>
+      </div>
+
+      <div class="mt-2" data-contest-carousel tabindex="0" style="touch-action: pan-y;">
+        <div class="overflow-hidden" data-contest-viewport>
+          <div
+            class="flex items-start gap-1 py-2 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transition-none"
+            data-contest-track
+          >
+          <article
+            class="ml-4 grid w-[calc(100%-2.5rem)] shrink-0 content-start items-start gap-8 rounded-[1.75rem] border border-gray-200/80 bg-gray-50/90 p-6 shadow-xl shadow-indigo-500/5 transition-[opacity,transform] duration-300 dark:border-gray-800 dark:bg-gray-950/70 md:w-[calc(100%-4rem)] md:p-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:p-10"
+            data-contest-slide
+          >
+            <div class="space-y-4 lg:self-start">
+              <div class="flex items-center gap-3">
+                <div class="inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-300">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-200 text-sky-800 dark:bg-sky-400/20 dark:text-sky-200">1</span>
+                  Step 1 of 4
+                </div>
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-sky-600 dark:text-sky-300">
+                  Start in the app
+                </p>
+              </div>
+              <div class="space-y-2">
+                <h3 class="mt-3 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
+                  Download the Free Coach Bowman App
+                </h3>
+                <p class="text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg">
+                  All submissions must be captured using the Coach Bowman app, and no payment is required to qualify for the contest.
+                </p>
+              </div>
+              <!--
+              <div class="grid gap-3 text-sm text-gray-600 dark:text-gray-300 md:text-base">
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+                  Record your entry inside Coach Bowman so it counts as an official submission.
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500"></span>
+                  Get your setup ready before you move on to filming your stick and celly.
+                </div>
+              </div>
+              -->
             </div>
-            <div class="w-5/6">
-              <h4
-                class="font-semibold text-lg text-gray-700 dark:text-sky-400"
-              >
-                Step 1: Download the Free Coach Bowman App
-              </h4>
-              <p class="text-gray-500 dark:text-gray-400">
-                All submissions must be captured using the Coach Bowman App. 
-               No payment is required to qualify for this contest. 
-              </p>
+            <div class="self-start overflow-hidden rounded-[1.5rem] border border-sky-200/60 bg-gradient-to-br from-sky-100 via-white to-indigo-100 shadow-xl shadow-sky-500/10 dark:border-sky-500/20 dark:from-sky-500/10 dark:via-gray-900 dark:to-indigo-500/10">
+              <img
+                src={unconnected_tripod}
+                alt="Coach Bowman app shown on a tripod setup"
+                class="h-full w-full object-cover"
+                width="6912"
+                height="3456"
+              />
             </div>
+          </article>
+
+          <article
+            class="grid w-[calc(100%-2.5rem)] shrink-0 content-start items-start gap-8 rounded-[1.75rem] border border-gray-200/80 bg-gray-50/90 p-6 shadow-xl shadow-indigo-500/5 transition-[opacity,transform] duration-300 dark:border-gray-800 dark:bg-gray-950/70 md:w-[calc(100%-4rem)] md:p-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:p-10"
+            data-contest-slide
+          >
+            <div class="space-y-4 lg:self-start">
+              <div class="flex items-center gap-3">
+                <div class="inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-300">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-200 text-blue-800 dark:bg-blue-400/20 dark:text-blue-200">2</span>
+                  Step 2 of 4
+                </div>
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600 dark:text-blue-300">
+                  Film your clip
+                </p>
+              </div>
+              <div class="space-y-2">
+                <h3 class="mt-3 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
+                  Capture Your Stick &amp; Celly in the App
+                </h3>
+                <p class="text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg">
+                  Use Coach Bowman to record a stuck dismount followed immediately by your favorite celebration. Best celly wins.
+                </p>
+              </div>
+              <!--
+              <div class="grid gap-3 text-sm text-gray-600 dark:text-gray-300 md:text-base">
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+                  Make the stuck landing clear first, then let the celebration be the moment that stands out.
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500"></span>
+                  If you want extra style points, add your favorite skills before the dismount.
+                </div>
+              </div>
+              -->
+            </div>
+            <div class="self-start overflow-hidden rounded-[1.5rem] border border-blue-200/60 bg-gradient-to-br from-blue-100 via-white to-cyan-100 shadow-xl shadow-blue-500/10 dark:border-blue-500/20 dark:from-blue-500/10 dark:via-gray-900 dark:to-cyan-500/10">
+              <video
+                class="h-full w-full object-cover dark:hidden"
+                src={stickCellyVideoLight}
+                width="2000"
+                height="2880"
+                autoplay
+                loop
+                muted
+                playsinline
+              ></video>
+              <video
+                class="hidden h-full w-full object-cover dark:block"
+                src={stickCellyVideoDark}
+                width="2000"
+                height="2880"
+                autoplay
+                loop
+                muted
+                playsinline
+              ></video>
+            </div>
+          </article>
+
+          <article
+            class="grid w-[calc(100%-2.5rem)] shrink-0 content-start items-start gap-8 rounded-[1.75rem] border border-gray-200/80 bg-gray-50/90 p-6 shadow-xl shadow-indigo-500/5 transition-[opacity,transform] duration-300 dark:border-gray-800 dark:bg-gray-950/70 md:w-[calc(100%-4rem)] md:p-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:p-10"
+            data-contest-slide
+          >
+            <div class="space-y-4 lg:self-start">
+              <div class="flex items-center gap-3">
+                <div class="inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-full border border-purple-200 bg-purple-50 px-4 py-2 text-sm font-semibold text-purple-700 dark:border-purple-500/30 dark:bg-purple-500/10 dark:text-purple-300">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-purple-200 text-purple-800 dark:bg-purple-400/20 dark:text-purple-200">3</span>
+                  Step 3 of 4
+                </div>
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-purple-600 dark:text-purple-300">
+                  Make it official
+                </p>
+              </div>
+              <div class="space-y-2">
+                <h3 class="mt-3 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
+                  Include the Required Watermark
+                </h3>
+                <p class="text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg">
+                  Use the <span class="font-semibold text-gray-900 dark:text-white">#StickCellyContest</span> button while clipping. It adds the required watermark and prompts you to agree to the contest terms and conditions.
+                </p>
+              </div>
+              <!--
+              <div class="grid gap-3 text-sm text-gray-600 dark:text-gray-300 md:text-base">
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+                  This step is what visually confirms your clip is part of the contest.
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-purple-500"></span>
+                  Apply the contest clip treatment before exporting so your final post is ready to go.
+                </div>
+              </div>
+              -->
+            </div>
+            <div class="self-start overflow-hidden rounded-[1.5rem] border border-purple-200/60 bg-gradient-to-br from-purple-100 via-white to-fuchsia-100 shadow-xl shadow-purple-500/10 dark:border-purple-500/20 dark:from-purple-500/10 dark:via-gray-900 dark:to-fuchsia-500/10">
+              <video
+                class="h-full w-full object-cover dark:hidden"
+                src={clippingVideoLight}
+                width="2000"
+                height="2880"
+                autoplay
+                loop
+                muted
+                playsinline
+              ></video>
+              <video
+                class="hidden h-full w-full object-cover dark:block"
+                src={clippingVideoDark}
+                width="2000"
+                height="2880"
+                autoplay
+                loop
+                muted
+                playsinline
+              ></video>
+            </div>
+          </article>
+
+          <article
+            class="mr-4 grid w-[calc(100%-2.5rem)] shrink-0 content-start items-start gap-8 rounded-[1.75rem] border border-gray-200/80 bg-gray-50/90 p-6 shadow-xl shadow-indigo-500/5 transition-[opacity,transform] duration-300 dark:border-gray-800 dark:bg-gray-950/70 md:w-[calc(100%-4rem)] md:p-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:p-10"
+            data-contest-slide
+          >
+            <div class="space-y-4 lg:self-start">
+              <div class="flex items-center gap-3">
+                <div class="inline-flex shrink-0 items-center gap-3 whitespace-nowrap rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-green-700 dark:border-green-500/30 dark:bg-green-500/10 dark:text-green-300">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-200 text-green-800 dark:bg-green-400/20 dark:text-green-200">4</span>
+                  Step 4 of 4
+                </div>
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-green-600 dark:text-green-300">
+                  Submit your entry
+                </p>
+              </div>
+              <div class="space-y-2">
+                <h3 class="mt-3 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
+                  Post on Instagram, Tag @coach.bowman.app, and Hashtag #StickCellyContest
+                </h3>
+                <p class="text-base leading-8 text-gray-600 dark:text-gray-300 md:text-lg">
+                  Share your clip as an Instagram Reel, tag <span class="font-semibold text-gray-900 dark:text-white">@coach.bowman.app</span>, and include <span class="font-semibold text-gray-900 dark:text-white">#StickCellyContest</span> to complete your entry.
+                </p>
+              </div>
+              <!--
+              <div class="grid gap-3 text-sm text-gray-600 dark:text-gray-300 md:text-base">
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-green-500"></span>
+                  Posting as a Reel gives the contest team a public, shareable version of your submission.
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-gray-900/70">
+                  <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-green-500"></span>
+                  Double-check the tag and hashtag before you publish so your entry is easy to find.
+                </div>
+              </div>
+              -->
+            </div>
+            <div class="self-start overflow-hidden rounded-[1.5rem] border border-green-200/60 bg-gradient-to-br from-green-100 via-white to-emerald-100 shadow-xl shadow-green-500/10 dark:border-green-500/20 dark:from-green-500/10 dark:via-gray-900 dark:to-emerald-500/10">
+              <img
+                src={instagram}
+                alt="Instagram reel screen used to complete the contest entry"
+                class="h-full w-full object-cover"
+                width="2150"
+                height="1640"
+              />
+            </div>
+          </article>
           </div>
-          <div class="pt-4 flex gap-4 md:items-center">
-            <div
-              class="w-12 h-12 flex items-center justify-center gap-4 rounded-full bg-blue-200 dark:bg-blue-900/20"
-            >
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-blue-700 dark:text-blue-400">
-                <rect x="4" y="5" width="16" height="10" rx="2"></rect>
-                <path d="M8 15l-2 4"></path>
-                <path d="M16 15l2 4"></path>
-                <circle cx="9" cy="10" r="1.5"></circle>
-                <circle cx="15" cy="10" r="1.5"></circle>
-              </svg>
-            </div>
-            <div class="w-5/6">
-              <h4
-                class="font-semibold text-lg text-gray-700 dark:text-blue-400"
-              >
-                Step 2: Capture Your Stick & Celly in the App
-              </h4>
-              <p class="text-gray-500 dark:text-gray-400">
-                Use the Coach Bowman app to capture a stuck dismount followed by your favorite celebration. Best celly wins!
-              </p>
-            </div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center justify-center gap-2">
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full bg-primary transition-transform duration-200"
+              data-contest-indicator
+              aria-label="Go to step 1"
+              aria-pressed="true"
+            ></button>
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full bg-gray-300 transition-transform duration-200 dark:bg-gray-700"
+              data-contest-indicator
+              aria-label="Go to step 2"
+              aria-pressed="false"
+            ></button>
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full bg-gray-300 transition-transform duration-200 dark:bg-gray-700"
+              data-contest-indicator
+              aria-label="Go to step 3"
+              aria-pressed="false"
+            ></button>
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full bg-gray-300 transition-transform duration-200 dark:bg-gray-700"
+              data-contest-indicator
+              aria-label="Go to step 4"
+              aria-pressed="false"
+            ></button>
           </div>
-          <div class="pt-4 flex gap-4 md:items-center">
-            <div
-              class="w-12 h-12 flex items-center justify-center gap-4 rounded-full bg-purple-200 dark:bg-purple-900/20"
+
+          <div class="flex flex-col items-center gap-3 sm:flex-row">
+            <span
+              class="text-sm font-medium text-gray-500 dark:text-gray-400"
+              data-contest-status
             >
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 m-auto text-purple-700 dark:text-purple-400">
-                <circle cx="12" cy="12" r="8"></circle>
-                <path d="M9 12l2 2 4-4"></path>
-                <path d="M12 4v2"></path>
-                <path d="M12 18v2"></path>
-                <path d="M4 12h2"></path>
-                <path d="M18 12h2"></path>
-              </svg>
-            </div>
-            <div class="w-5/6">
-              <h4
-                class="font-semibold text-lg text-gray-700 dark:text-purple-400"
+              Step 1 of 4
+            </span>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="inline-flex min-h-[2.75rem] items-center justify-center rounded-full border border-gray-200 bg-white px-5 text-sm font-semibold text-gray-700 transition duration-200 hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-45 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
+                data-contest-prev
               >
-                Step 3: Include the Required Watermark
-              </h4>
-              <p class="text-gray-500 dark:text-gray-400">
-                Use the #StickCellyContest button while clipping. This will add
-                the required watermark, and require you to agree to the contest terms and conditions.
-              </p>
-            </div>
-          </div>
-          <div class="pt-4 flex gap-4 md:items-center">
-            <div
-              class="w-12 h-12 flex items-center justify-center gap-4 rounded-full bg-green-200 dark:bg-green-900/20"
-            >
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-600 dark:text-green-400 translate-x-[1px]">
-                <circle cx="9" cy="8" r="3"></circle>
-                <path d="M2 20c0-3.314 3.134-6 7-6"></path>
-                <path d="M16 11v4"></path>
-                <path d="M14 13h4"></path>
-              </svg>
-            </div>
-            <div class="w-5/6">
-              <h4
-                class="font-semibold text-lg text-gray-700 dark:text-green-400"
+                Previous
+              </button>
+              <button
+                type="button"
+                class="inline-flex min-h-[2.75rem] items-center justify-center rounded-full bg-[linear-gradient(82deg,#9936FD_0%,#484FF3_100%)] px-5 text-sm font-semibold text-white transition duration-200 hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-45"
+                data-contest-next
               >
-                Step 4: Post on Instagram, Tag @coach.bowman.app, and Hashtag #StickCellyContest
-              </h4>
-              <p class="text-gray-500 dark:text-gray-400">
-                Post your clip as a Reel, tag @coach.bowman.app, and include
-                #StickCellyContest to complete your entry.
-              </p>
+                Next
+              </button>
             </div>
           </div>
         </div>
       </div>
-  
-    </div>
+    </section>
   </div>
   <div class="m-10 lg:my-10 lg:ml-32 lg:mr-10">
     <div
@@ -484,4 +644,238 @@ import question_mark from "../../assets/question_mark.jpg";
       updateProgress();
     }, 1000);
   }
+
+  const contestCarousels = document.querySelectorAll("[data-contest-carousel]");
+
+  contestCarousels.forEach((carousel) => {
+    const viewport = carousel.querySelector("[data-contest-viewport]");
+    const track = carousel.querySelector("[data-contest-track]");
+    const slides = Array.from(carousel.querySelectorAll("[data-contest-slide]"));
+    const indicators = Array.from(
+      carousel.querySelectorAll("[data-contest-indicator]"),
+    );
+    const status = carousel.querySelector("[data-contest-status]");
+    const previousButton = carousel.querySelector("[data-contest-prev]");
+    const nextButton = carousel.querySelector("[data-contest-next]");
+
+    if (
+      !viewport ||
+      !track ||
+      !slides.length ||
+      !status ||
+      !previousButton ||
+      !nextButton ||
+      indicators.length !== slides.length
+    ) {
+      return;
+    }
+
+    let activeIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchHasMoved = false;
+    let touchIsDragging = false;
+    let dragStartTranslate = 0;
+    let currentTranslate = 0;
+
+    const getTranslateBounds = () => {
+      const lastSlide = slides[slides.length - 1];
+
+      if (!lastSlide) {
+        return {
+          maxTranslate: 0,
+          minTranslate: 0,
+        };
+      }
+
+      const centeredLastSlideTranslate =
+        viewport.clientWidth / 2 -
+        (lastSlide.offsetLeft + lastSlide.offsetWidth / 2);
+
+      return {
+        maxTranslate: 0,
+        minTranslate: Math.min(0, centeredLastSlideTranslate),
+      };
+    };
+
+    const clampTranslate = (translate, overflow = 0) => {
+      const { minTranslate, maxTranslate } = getTranslateBounds();
+      return Math.min(
+        maxTranslate + overflow,
+        Math.max(minTranslate - overflow, translate),
+      );
+    };
+
+    const updateNavigationState = () => {
+      previousButton.disabled = activeIndex === 0;
+      nextButton.disabled = activeIndex === slides.length - 1;
+    };
+
+    const renderActiveSlide = ({
+      animate = true,
+      translateOverride,
+      allowOverflow = 0,
+    } = {}) => {
+      track.style.transitionDuration = animate ? "" : "0ms";
+
+      const activeSlide = slides[activeIndex];
+      if (!activeSlide) return;
+
+      const targetTranslate =
+        viewport.clientWidth / 2 -
+        (activeSlide.offsetLeft + activeSlide.offsetWidth / 2);
+
+      currentTranslate =
+        typeof translateOverride === "number"
+          ? clampTranslate(translateOverride, allowOverflow)
+          : clampTranslate(targetTranslate);
+
+      track.style.transform = `translateX(${currentTranslate}px)`;
+
+      slides.forEach((slide, index) => {
+        const isActive = index === activeIndex;
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      indicators.forEach((indicator, index) => {
+        const isActive = index === activeIndex;
+        indicator.setAttribute("aria-pressed", String(isActive));
+        indicator.classList.toggle("bg-primary", isActive);
+        indicator.classList.toggle("scale-125", isActive);
+        indicator.classList.toggle("bg-gray-300", !isActive);
+        indicator.classList.toggle("dark:bg-gray-700", !isActive);
+      });
+
+      status.textContent = `Step ${activeIndex + 1} of ${slides.length}`;
+      updateNavigationState();
+    };
+
+    const moveToSlide = (index) => {
+      const clampedIndex = Math.max(0, Math.min(slides.length - 1, index));
+      activeIndex = clampedIndex;
+      renderActiveSlide({ animate: true });
+    };
+
+    previousButton.addEventListener("click", () => {
+      if (activeIndex > 0) moveToSlide(activeIndex - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      if (activeIndex < slides.length - 1) moveToSlide(activeIndex + 1);
+    });
+
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        moveToSlide(index);
+      });
+    });
+
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        moveToSlide(activeIndex - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        moveToSlide(activeIndex + 1);
+      }
+    });
+
+    carousel.addEventListener(
+      "touchstart",
+      (event) => {
+        const touch = event.changedTouches[0];
+        if (!touch) return;
+
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        touchHasMoved = true;
+        touchIsDragging = false;
+        dragStartTranslate = currentTranslate;
+        track.style.transitionDuration = "0ms";
+      },
+      { passive: true },
+    );
+
+    carousel.addEventListener(
+      "touchmove",
+      (event) => {
+        if (!touchHasMoved) return;
+
+        const touch = event.changedTouches[0];
+        if (!touch) return;
+
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+
+        if (!touchIsDragging) {
+          if (Math.abs(deltaX) < 10 || Math.abs(deltaX) <= Math.abs(deltaY)) {
+            return;
+          }
+
+          touchIsDragging = true;
+        }
+
+        renderActiveSlide({
+          animate: false,
+          translateOverride: dragStartTranslate + deltaX,
+          allowOverflow: 40,
+        });
+      },
+      { passive: true },
+    );
+
+    carousel.addEventListener(
+      "touchend",
+      (event) => {
+        if (!touchHasMoved) return;
+
+        const touch = event.changedTouches[0];
+        if (!touch) return;
+
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        const swipeThreshold = 50;
+        const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+
+        if (
+          touchIsDragging &&
+          isHorizontalSwipe &&
+          Math.abs(deltaX) > swipeThreshold
+        ) {
+          if (deltaX < 0) {
+            moveToSlide(activeIndex + 1);
+          } else {
+            moveToSlide(activeIndex - 1);
+          }
+        } else {
+          renderActiveSlide({ animate: true });
+        }
+
+        touchHasMoved = false;
+        touchIsDragging = false;
+      },
+      { passive: true },
+    );
+
+    carousel.addEventListener("touchcancel", () => {
+      touchHasMoved = false;
+      touchIsDragging = false;
+      renderActiveSlide({ animate: true });
+    });
+
+    const syncCarouselLayout = () => {
+      renderActiveSlide({ animate: false });
+    };
+
+    window.addEventListener("resize", syncCarouselLayout);
+
+    if (typeof ResizeObserver !== "undefined") {
+      const resizeObserver = new ResizeObserver(syncCarouselLayout);
+      resizeObserver.observe(viewport);
+    }
+
+    renderActiveSlide({ animate: false });
+  });
 </script>
