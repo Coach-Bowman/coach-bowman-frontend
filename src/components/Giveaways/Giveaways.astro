@@ -1,17 +1,17 @@
 ---
 import unconnected_tripod from "../../assets/unconnected-tripod.png";
 import instagram from "../../assets/instagram.png";
-import stickCellyVideoLight from "../../assets/sikra-stick-celly-light.mp4";
-import stickCellyVideoDark from "../../assets/sikra-stick-celly-dark.mp4";
-import clippingVideoLight from "../../assets/sikra-clipping-light.mp4";
-import clippingVideoDark from "../../assets/sikra-clipping-dark.mp4";
+import cath_celly_light from "../../assets/cath_celly_light.png";
+import cath_celly_dark from "../../assets/cath_celly_dark.png";
+import contest_screenLight from "../../assets/contest_screen_light.png";
+import contest_screenDark from "../../assets/contest_screen_dark.png";
 import prizes from "../../assets/prizes.png";
 import question_mark from "../../assets/question_mark.jpg";
 
 ---
 
 <div id="features">
-  <!-- <Container> -->
+  <!-- <Container> -->``
   <div class="mx-10 mt-10 lg:my-10 lg:ml-32 lg:mr-10">
     <div
       class="space-y-6 justify-between text-gray-600 md:flex md:gap-6 md:space-y-0 lg:gap-4 "
@@ -57,26 +57,20 @@ import question_mark from "../../assets/question_mark.jpg";
             
           </p>
          
-          <video
+          <img
           class="mx-auto w-full max-w-2xl dark:hidden"
-          src={stickCellyVideoLight}
+          src={cath_celly_light}
+          alt="Coach Bowman celly screen in light mode"
           width="2000"
           height="2880"
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-        <video
+        />
+        <img
           class="mx-auto hidden w-full max-w-2xl dark:block"
-          src={stickCellyVideoDark}
+          src={cath_celly_dark}
+          alt="Coach Bowman celly screen in dark mode"
           width="2000"
           height="2880"
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
+        />
         <p class="mt-8 mb-8 text-center text-lg text-gray-600 dark:text-gray-300">
             Capture a stuck dismount followed by your favorite celebration using the Coach Bowman app. Want to stand out? Add your favorite skills before the dismount. 
         </p>
@@ -193,29 +187,21 @@ import question_mark from "../../assets/question_mark.jpg";
               </div>
               -->
             </div>
-            <div class="self-start overflow-hidden rounded-[1.5rem] border border-blue-200/60 bg-gradient-to-br from-blue-100 via-white to-cyan-100 dark:border-blue-500/20 dark:from-blue-500/10 dark:via-gray-900 dark:to-cyan-500/10">
-              <div class="relative aspect-[4/3] w-full overflow-hidden">
-                <video
-                  class="absolute left-1/2 top-1/2 block h-auto w-[75%] max-w-none -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center dark:hidden"
-                  src={stickCellyVideoLight}
-                  width="2000"
-                  height="2880"
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                ></video>
-                <video
-                  class="absolute left-1/2 top-1/2 hidden h-auto w-[75%] max-w-none -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center dark:block"
-                  src={stickCellyVideoDark}
-                  width="2000"
-                  height="2880"
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                ></video>
-              </div>
+            <div class="self-start justify-self-center w-[75%] overflow-hidden rounded-[1.5rem] border border-blue-200/60 bg-gradient-to-br from-blue-100 via-white to-cyan-100 dark:border-blue-500/20 dark:from-blue-500/10 dark:via-gray-900 dark:to-cyan-500/10">
+              <img
+                class="block h-auto w-full dark:hidden"
+                src={cath_celly_light}
+                alt="Coach Bowman celly screen in light mode"
+                width="2000"
+                height="2880"
+              />
+              <img
+                class="hidden h-auto w-full dark:block"
+                src={cath_celly_dark}
+                alt="Coach Bowman celly screen in dark mode"
+                width="2000"
+                height="2880"
+              />
             </div>
           </article>
 
@@ -254,29 +240,21 @@ import question_mark from "../../assets/question_mark.jpg";
               </div>
               -->
             </div>
-            <div class="self-start overflow-hidden rounded-[1.5rem] border border-purple-200/60 bg-gradient-to-br from-purple-100 via-white to-fuchsia-100 dark:border-purple-500/20 dark:from-purple-500/10 dark:via-gray-900 dark:to-fuchsia-500/10">
-              <div class="relative aspect-[4/3] w-full overflow-hidden">
-                <video
-                  class="absolute left-1/2 top-1/2 block h-auto w-[75%] max-w-none -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center dark:hidden"
-                  src={clippingVideoLight}
-                  width="2000"
-                  height="2880"
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                ></video>
-                <video
-                  class="absolute left-1/2 top-1/2 hidden h-auto w-[75%] max-w-none -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center dark:block"
-                  src={clippingVideoDark}
-                  width="2000"
-                  height="2880"
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                ></video>
-              </div>
+            <div class="self-start justify-self-center w-[75%] overflow-hidden rounded-[1.5rem] border border-purple-200/60 bg-gradient-to-br from-purple-100 via-white to-fuchsia-100 dark:border-purple-500/20 dark:from-purple-500/10 dark:via-gray-900 dark:to-fuchsia-500/10">
+              <img
+                class="block h-auto w-full dark:hidden"
+                src={contest_screenLight}
+                alt="Coach Bowman contest screen in light mode"
+                width="2000"
+                height="2880"
+              />
+              <img
+                class="hidden h-auto w-full dark:block"
+                src={contest_screenDark}
+                alt="Coach Bowman contest screen in dark mode"
+                width="2000"
+                height="2880"
+              />
             </div>
           </article>
 
