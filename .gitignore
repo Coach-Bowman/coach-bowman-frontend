@@ -5,3 +5,9 @@ yarn-error.log
 
 # Astro
 /.astro
+
+# App Store Connect credentials
+*.p8
+.env
+.env.*
+!.env.example

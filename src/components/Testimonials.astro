@@ -1,77 +1,66 @@
 ---
-import Container from "./Container.astro"
+import Container from "./Container.astro";
+import { getAppStoreReviews } from "../lib/appStoreReviews";
 
+const reviews = await getAppStoreReviews();
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
 ---
 
-<div class="text-gray-600 dark:text-gray-300" id="testimonials">
-  <Container>
-    <div class="mb-20 space-y-4 px-6 md:px-0">
-      <h2 class="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-        We have some fans.
-      </h2>
-    </div>
-    <div class="md:columns-2 lg:columns-3 gap-8 space-y-8">
-      <div class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
-        <div class="flex gap-4">
-          <img class="w-12 h-12 rounded-full" src="./images/avatars/avatar.webp" alt="user avatar" width="400" height="400" loading="lazy">
-          <div>
-            <h6 class="text-lg font-medium text-gray-700 dark:text-white">Daniella Doe</h6>
-            <p class="text-sm text-gray-500 dark:text-gray-300">Mobile dev</p>
-          </div>
+{
+  reviews.length > 0 && (
+    <section class="text-gray-600 dark:text-gray-300" id="testimonials">
+      <Container>
+        <div class="mb-12 space-y-4 px-6 text-center md:px-0">
+          <p class="text-sm font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+            App Store reviews
+          </p>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+            Coaches and athletes love Coach Bowman.
+          </h2>
+          <p class="mx-auto max-w-2xl text-gray-600 dark:text-gray-300">
+            Every four- and five-star review, shown newest first.
+          </p>
         </div>
-        <p class="mt-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid quo eum quae quos illo earum ipsa doloribus nostrum minus libero aspernatur laborum cum, a suscipit, ratione ea totam ullam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.</p>
-      </div>
-      <div class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
-        <div class="flex gap-4">
-          <img class="w-12 h-12 rounded-full" src="./images/avatars/avatar-1.webp" alt="user avatar" width="200" height="200" loading="lazy">
-          <div>
-            <h6 class="text-lg font-medium text-gray-700 dark:text-white">Jane doe</h6>
-            <p class="text-sm text-gray-500 dark:text-gray-300">Marketing</p>
-          </div>
-        </div>
-        <p class="mt-8"> Lorem ipsum dolor laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.</p>
-      </div>
-      <div class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
-        <div class="flex gap-4">
-          <img class="w-12 h-12 rounded-full" src="./images/avatars/avatar-2.webp" alt="user avatar" width="200" height="200" loading="lazy">
-          <div>
-            <h6 class="text-lg font-medium text-gray-700 dark:text-white">Yanick Doe</h6>
-            <p class="text-sm text-gray-500 dark:text-gray-300">Developer</p>
-          </div>
-        </div>
-        <p class="mt-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.</p>
-      </div>
-      <div class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
-        <div class="flex gap-4">
-          <img class="w-12 h-12 rounded-full" src="./images/avatars/avatar-3.webp" alt="user avatar" width="200" height="200" loading="lazy">
-          <div>
-            <h6 class="text-lg font-medium text-gray-700 dark:text-white">Jane Doe</h6>
-            <p class="text-sm text-gray-500 dark:text-gray-300">Mobile dev</p>
-          </div>
-        </div>
-        <p class="mt-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.</p>
-      </div>
-      <div class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
-        <div class="flex gap-4">
-          <img class="w-12 h-12 rounded-full" src="./images/avatars/avatar-4.webp" alt="user avatar" width="200" height="200" loading="lazy">
-          <div>
-            <h6 class="text-lg font-medium text-gray-700 dark:text-white">Andy Doe</h6>
-            <p class="text-sm text-gray-500 dark:text-gray-300">Manager</p>
-          </div>
-        </div>
-        <p class="mt-8"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.</p>
-      </div>
-      <div class="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
-        <div class="flex gap-4">
-          <img class="w-12 h-12 rounded-full" src="./images/avatars/avatar-2.webp" alt="user avatar" width="400" height="400" loading="lazy">
-          <div>
-            <h6 class="text-lg font-medium text-gray-700 dark:text-white">Yanndy Doe</h6>
-            <p class="text-sm text-gray-500 dark:text-gray-300">Mobile dev</p>
-          </div>
-        </div>
-        <p class="mt-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.</p>
-      </div>
 
-    </div>
-  </Container>
-</div>
+        <div class="gap-8 space-y-8 md:columns-2 lg:columns-3">
+          {reviews.map((review) => (
+            <article class="mb-8 break-inside-avoid rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none">
+              <div
+                class="text-lg tracking-wider text-amber-500"
+                aria-label={`${review.rating} out of 5 stars`}
+              >
+                <span aria-hidden="true">{"★".repeat(review.rating)}</span>
+              </div>
+
+              <h3 class="mt-4 text-lg font-semibold text-gray-800 dark:text-white">
+                {review.title}
+              </h3>
+
+              {review.body && (
+                <p class="mt-3 whitespace-pre-line leading-relaxed">
+                  {review.body}
+                </p>
+              )}
+
+              <footer class="mt-6 border-t border-gray-100 pt-4 text-sm dark:border-gray-700">
+                <p class="font-medium text-gray-700 dark:text-gray-200">
+                  {review.reviewerNickname}
+                </p>
+                <p class="mt-1 text-gray-500 dark:text-gray-400">
+                  <time datetime={review.createdDate}>
+                    {dateFormatter.format(new Date(review.createdDate))}
+                  </time>
+                  {review.territory && ` · ${review.territory}`}
+                </p>
+              </footer>
+            </article>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
