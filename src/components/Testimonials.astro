@@ -4,6 +4,26 @@ import countries from "i18n-iso-countries";
 
 const reviews = await getAppStoreReviews();
 const reviewSets = reviews.length > 1 ? [false, true] : [false];
+const firstReviewRow = reviews.filter((_, index) => index % 2 === 0);
+const secondReviewRow = reviews.filter((_, index) => index % 2 === 1);
+const reviewRows = [
+  {
+    reviews: firstReviewRow,
+    setClass: "gap-3 pl-3",
+    cardClass: "h-48 w-48 rounded-2xl p-3",
+    offset: false,
+    syncGroup: "reviews",
+    label: "Customer reviews, first row",
+  },
+  {
+    reviews: secondReviewRow.length > 0 ? secondReviewRow : firstReviewRow,
+    setClass: "gap-3 pl-3",
+    cardClass: "h-48 w-48 rounded-2xl p-3",
+    offset: true,
+    syncGroup: "reviews",
+    label: "Customer reviews, second row",
+  },
+];
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "short",
@@ -32,7 +52,7 @@ function territoryFlag(territory: string) {
 {
   reviews.length > 0 && (
     <section
-      class="testimonial-gradient w-full overflow-hidden py-8 text-gray-600 sm:py-10 dark:text-gray-300"
+      class="testimonial-gradient w-full overflow-hidden pt-8 pb-16 text-gray-600 sm:pt-10 sm:pb-20 dark:text-gray-300"
       id="testimonials"
     >
       <div class="mb-8 px-6 text-center">
@@ -45,158 +65,294 @@ function territoryFlag(territory: string) {
         </p>
       </div>
 
-      <div
-        class="review-carousel w-full overflow-x-auto"
-        tabindex="0"
-        aria-label="Continuously scrolling customer reviews"
-        data-review-carousel
-      >
-        <div class="flex w-max" data-review-track>
-          {reviewSets.map((isDuplicate) => (
-            <div
-              class="flex shrink-0 gap-6 pl-6"
-              data-review-set={isDuplicate ? "duplicate" : "original"}
-              aria-hidden={isDuplicate ? "true" : undefined}
-            >
-              {reviews.map((review) => (
-                <article class="flex max-h-[24rem] w-[85vw] flex-none self-start flex-col rounded-3xl border border-gray-100 bg-white p-6 shadow-xl shadow-gray-600/10 sm:w-96 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none">
-                  <div class="flex items-center justify-between gap-3">
-                    <div class="flex min-w-0 items-center gap-3">
-                      <div
-                        class="flex shrink-0 gap-0.5 text-amber-500"
-                        aria-label={`${review.rating} out of 5 stars`}
-                      >
-                        {Array.from({ length: 5 }, (_, index) => (
-                          <svg
-                            class="h-5 w-5"
-                            viewBox="0 0 24 24"
-                            fill={
-                              index < review.rating ? "currentColor" : "white"
-                            }
-                            stroke="currentColor"
-                            stroke-width="1.75"
-                            aria-hidden="true"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="m11.48 3.5 2.2 4.46a.58.58 0 0 0 .44.32l4.92.72c.48.07.68.67.33 1.01l-3.56 3.47a.58.58 0 0 0-.17.52l.84 4.9c.08.48-.42.85-.85.62l-4.4-2.31a.58.58 0 0 0-.54 0l-4.4 2.31c-.43.23-.93-.14-.85-.62l.84-4.9a.58.58 0 0 0-.17-.52L2.55 10c-.35-.34-.15-.94.33-1.01l4.92-.72a.58.58 0 0 0 .44-.32l2.2-4.46c.22-.44.84-.44 1.04 0Z"
-                            />
-                          </svg>
-                        ))}
-                      </div>
-                      <time
-                        class="truncate text-sm text-gray-500 dark:text-gray-400"
-                        datetime={review.createdDate}
-                      >
-                        {dateFormatter.format(new Date(review.createdDate))}
-                      </time>
-                    </div>
-                    <span
-                      class="text-2xl"
-                      role="img"
-                      aria-label={
-                        review.territory
-                          ? `Review from ${review.territory}`
-                          : "Review territory unavailable"
-                      }
-                      title={review.territory || "Territory unavailable"}
+      <div class="space-y-3">
+        {reviewRows.map((row) => (
+          <div
+            class="review-carousel w-full overflow-x-auto"
+            tabindex="0"
+            aria-label={row.label}
+            data-review-carousel
+            data-review-offset={row.offset ? "half-card" : undefined}
+            data-review-sync={row.syncGroup}
+          >
+            <div class="flex w-max" data-review-track>
+              {reviewSets.map((isDuplicate) => (
+                <div
+                  class:list={["flex shrink-0", row.setClass]}
+                  data-review-set={isDuplicate ? "duplicate" : "original"}
+                  aria-hidden={isDuplicate ? "true" : undefined}
+                >
+                  {row.reviews.map((review) => (
+                    <article
+                      class:list={[
+                        "flex flex-none flex-col border border-gray-100 bg-white shadow-xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none",
+                        row.cardClass,
+                      ]}
                     >
-                      {territoryFlag(review.territory)}
-                    </span>
-                  </div>
-
-                  <h3 class="mt-3 text-lg font-semibold text-gray-800 dark:text-white">
-                    {review.title}
-                  </h3>
-
-                  <div
-                    class="review-body min-h-0 flex-1 overflow-y-auto pr-1 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
-                    tabindex={isDuplicate ? "-1" : "0"}
-                    aria-label="Review text and developer response"
-                  >
-                    {review.body && (
-                      <p class="whitespace-pre-line leading-relaxed">
-                        {review.body}
-                      </p>
-                    )}
-
-                    {review.developerResponse && (
-                      <div class="mt-4 rounded-2xl bg-sky-50 p-3 dark:bg-gray-900/60">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400">
-                          Developer response
-                        </p>
-                        <p class="mt-2 whitespace-pre-line text-sm leading-relaxed text-gray-700 dark:text-gray-200">
-                          {review.developerResponse.body}
-                        </p>
+                      <div class="flex items-center justify-between gap-2">
+                        <div class="flex min-w-0 items-center gap-2">
+                          <div
+                            class="flex shrink-0 gap-0.5 text-amber-500"
+                            aria-label={`${review.rating} out of 5 stars`}
+                          >
+                            {Array.from({ length: 5 }, (_, index) => (
+                              <svg
+                                class="h-3 w-3"
+                                viewBox="0 0 24 24"
+                                fill={
+                                  index < review.rating
+                                    ? "currentColor"
+                                    : "white"
+                                }
+                                stroke="currentColor"
+                                stroke-width="1.75"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="m11.48 3.5 2.2 4.46a.58.58 0 0 0 .44.32l4.92.72c.48.07.68.67.33 1.01l-3.56 3.47a.58.58 0 0 0-.17.52l.84 4.9c.08.48-.42.85-.85.62l-4.4-2.31a.58.58 0 0 0-.54 0l-4.4 2.31c-.43.23-.93-.14-.85-.62l.84-4.9a.58.58 0 0 0-.17-.52L2.55 10c-.35-.34-.15-.94.33-1.01l4.92-.72a.58.58 0 0 0 .44-.32l2.2-4.46c.22-.44.84-.44 1.04 0Z"
+                                />
+                              </svg>
+                            ))}
+                          </div>
+                          <time
+                            class="truncate text-[10px] text-gray-500 dark:text-gray-400"
+                            datetime={review.createdDate}
+                          >
+                            {dateFormatter.format(new Date(review.createdDate))}
+                          </time>
+                        </div>
+                        <span
+                          class="text-lg"
+                          role="img"
+                          aria-label={
+                            review.territory
+                              ? `Review from ${review.territory}`
+                              : "Review territory unavailable"
+                          }
+                          title={review.territory || "Territory unavailable"}
+                        >
+                          {territoryFlag(review.territory)}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                </article>
+
+                      <h3 class="mt-2 text-sm font-semibold leading-tight text-gray-800 dark:text-white">
+                        {review.title}
+                      </h3>
+
+                      <div
+                        class="review-body min-h-0 flex-1 overflow-y-auto pr-1 text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+                        tabindex={isDuplicate ? "-1" : "0"}
+                        aria-label="Review text and developer response"
+                      >
+                        {review.body && (
+                          <p class="whitespace-pre-line">{review.body}</p>
+                        )}
+
+                        {review.developerResponse && (
+                          <div class="mt-2 rounded-xl bg-sky-50 p-2 dark:bg-gray-900/60">
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400">
+                              Developer response
+                            </p>
+                            <p class="mt-1 whitespace-pre-line text-xs leading-relaxed text-gray-700 dark:text-gray-200">
+                              {review.developerResponse.body}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </article>
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )
 }
 
 <script>
-  const carousel = document.querySelector<HTMLElement>(
-    "[data-review-carousel]",
+  const testimonialSection =
+    document.querySelector<HTMLElement>("#testimonials");
+  const carousels = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-review-carousel]"),
   );
 
-  if (carousel) {
-    const originalSet = carousel.querySelector<HTMLElement>(
-      '[data-review-set="original"]',
-    );
+  if (carousels.length > 0) {
+    const carouselStates = carousels.map((carousel) => ({
+      carousel,
+      track: carousel.querySelector<HTMLElement>("[data-review-track]"),
+      originalSet: carousel.querySelector<HTMLElement>(
+        '[data-review-set="original"]',
+      ),
+    }));
+    const syncedScrollPositions = new WeakMap<HTMLElement, number>();
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     );
     const pixelsPerSecond = 95;
-    let interactionPaused = false;
+    let pointerInteracting = false;
+    let sectionHovered = false;
     let lastFrameTime = performance.now();
+
+    const getCarouselOffset = (
+      carousel: HTMLElement,
+      originalSet: HTMLElement,
+    ) => {
+      if (carousel.dataset.reviewOffset !== "half-card") {
+        return 0;
+      }
+
+      const firstCard = originalSet.querySelector<HTMLElement>("article");
+      return (firstCard?.getBoundingClientRect().width || 0) / 2;
+    };
+
+    const wrapScrollPosition = (position: number, loopWidth: number) =>
+      ((position % loopWidth) + loopWidth) % loopWidth;
+
+    const ensureLoopCopies = (
+      carousel: HTMLElement,
+      track: HTMLElement,
+      originalSet: HTMLElement,
+    ) => {
+      const loopWidth = originalSet.scrollWidth;
+
+      if (carousel.clientWidth === 0 || loopWidth === 0) {
+        return;
+      }
+
+      const requiredTrackWidth = loopWidth + carousel.clientWidth;
+
+      while (track.scrollWidth < requiredTrackWidth) {
+        const duplicateSet = originalSet.cloneNode(true) as HTMLElement;
+        duplicateSet.dataset.reviewSet = "duplicate";
+        duplicateSet.setAttribute("aria-hidden", "true");
+        duplicateSet
+          .querySelectorAll<HTMLElement>("[tabindex]")
+          .forEach((element) => element.setAttribute("tabindex", "-1"));
+        track.append(duplicateSet);
+      }
+    };
 
     const animate = (frameTime: number) => {
       const elapsedMilliseconds = Math.min(frameTime - lastFrameTime, 100);
       lastFrameTime = frameTime;
 
-      if (
-        originalSet &&
-        !interactionPaused &&
-        !prefersReducedMotion.matches &&
-        !document.hidden
-      ) {
-        carousel.scrollLeft += (pixelsPerSecond * elapsedMilliseconds) / 1000;
+      for (const { carousel, track, originalSet } of carouselStates) {
+        if (!track || !originalSet || carousel.clientWidth === 0) {
+          continue;
+        }
 
-        if (carousel.scrollLeft >= originalSet.scrollWidth) {
-          carousel.scrollLeft -= originalSet.scrollWidth;
+        ensureLoopCopies(carousel, track, originalSet);
+
+        if (
+          carousel.dataset.reviewOffset === "half-card" &&
+          carousel.dataset.reviewOffsetApplied !== "true"
+        ) {
+          const offset = getCarouselOffset(carousel, originalSet);
+
+          if (offset > 0) {
+            carousel.scrollLeft = offset;
+            carousel.dataset.reviewOffsetApplied = "true";
+          }
+        }
+
+        if (
+          !pointerInteracting &&
+          !sectionHovered &&
+          !prefersReducedMotion.matches &&
+          !document.hidden
+        ) {
+          carousel.scrollLeft += (pixelsPerSecond * elapsedMilliseconds) / 1000;
+
+          if (carousel.scrollLeft >= originalSet.scrollWidth) {
+            carousel.scrollLeft -= originalSet.scrollWidth;
+          }
         }
       }
 
       window.requestAnimationFrame(animate);
     };
 
-    carousel.addEventListener("mouseenter", () => {
-      interactionPaused = true;
+    carouselStates.forEach(({ carousel, originalSet }) => {
+      carousel.addEventListener("pointerdown", () => {
+        pointerInteracting = true;
+      });
+      carousel.addEventListener("scroll", () => {
+        const expectedScrollLeft = syncedScrollPositions.get(carousel);
+
+        if (
+          expectedScrollLeft !== undefined &&
+          Math.abs(carousel.scrollLeft - expectedScrollLeft) < 1
+        ) {
+          syncedScrollPositions.delete(carousel);
+          return;
+        }
+
+        syncedScrollPositions.delete(carousel);
+
+        const syncGroup = carousel.dataset.reviewSync;
+        if (
+          !syncGroup ||
+          !originalSet ||
+          carousel.clientWidth === 0 ||
+          originalSet.scrollWidth === 0
+        ) {
+          return;
+        }
+
+        const sourcePosition = wrapScrollPosition(
+          carousel.scrollLeft - getCarouselOffset(carousel, originalSet),
+          originalSet.scrollWidth,
+        );
+
+        for (const targetState of carouselStates) {
+          const target = targetState.carousel;
+          const targetSet = targetState.originalSet;
+
+          if (
+            target === carousel ||
+            target.dataset.reviewSync !== syncGroup ||
+            !targetSet ||
+            target.clientWidth === 0 ||
+            targetSet.scrollWidth === 0
+          ) {
+            continue;
+          }
+
+          const targetScrollLeft = wrapScrollPosition(
+            sourcePosition + getCarouselOffset(target, targetSet),
+            targetSet.scrollWidth,
+          );
+          syncedScrollPositions.set(target, targetScrollLeft);
+          target.scrollLeft = targetScrollLeft;
+        }
+      });
     });
-    carousel.addEventListener("mouseleave", () => {
-      interactionPaused = false;
-    });
-    carousel.addEventListener("focusin", () => {
-      interactionPaused = true;
-    });
-    carousel.addEventListener("focusout", (event) => {
-      if (!carousel.contains(event.relatedTarget as Node | null)) {
-        interactionPaused = false;
-      }
-    });
-    carousel.addEventListener("pointerdown", () => {
-      interactionPaused = true;
-    });
+
     window.addEventListener("pointerup", () => {
-      interactionPaused = false;
+      pointerInteracting = false;
+    });
+    window.addEventListener("pointercancel", () => {
+      pointerInteracting = false;
+    });
+    window.addEventListener("blur", () => {
+      pointerInteracting = false;
+    });
+    testimonialSection?.addEventListener("mouseenter", () => {
+      sectionHovered = true;
+    });
+    testimonialSection?.addEventListener("mouseleave", () => {
+      sectionHovered = false;
+    });
+    document.addEventListener("visibilitychange", () => {
+      lastFrameTime = performance.now();
+
+      if (!document.hidden) {
+        pointerInteracting = false;
+      }
     });
     window.requestAnimationFrame(animate);
   }
