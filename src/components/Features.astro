@@ -1,7 +1,6 @@
 ---
 import Container from "./Container.astro";
-import unconnected from "../assets/unconnected.png";
-import unconnected_tripod from "../assets/unconnected-tripod.png";
+import unconnected_tripod from "../assets/outdoor_usage.png";
 import beam from "../assets/SOPHIE-BEAM.png";
 ---
 
@@ -19,10 +18,10 @@ import beam from "../assets/SOPHIE-BEAM.png";
           <h2
             class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white"
           >
-            Sports Video Review
+            Video Review
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-bold"
-              >Made for Everyday Practice</span
+              >Designed for Daily Practice</span
             >
           </h2>
           <!-- <p class="my-8 text-gray-600 dark:text-gray-300">
@@ -56,7 +55,7 @@ import beam from "../assets/SOPHIE-BEAM.png";
                 <h4
                   class="font-semibold text-lg text-gray-700 dark:text-indigo-400"
                 >
-                  Continuous Video Review
+                  Never Miss a Moment
                 </h4>
                 <p class="text-gray-500 dark:text-gray-400">
                   Review mistakes on your iPad, while your iPhone continues to
@@ -113,7 +112,7 @@ import beam from "../assets/SOPHIE-BEAM.png";
           <h2
             class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white"
           >
-            Powerful, Portable, and Affordable
+            Portable = Powerful
           </h2>
           <p class="my-8 text-gray-600 dark:text-gray-300">
             With your iPhone and iPad, you have all the power you need to
@@ -198,9 +197,51 @@ import beam from "../assets/SOPHIE-BEAM.png";
         <img
           src={unconnected_tripod}
           alt="unconnected devices"
-          class="w-full mt-12 md:mt-0"
+          class="unconnected-tripod-image mt-12 md:mt-0"
         />
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .unconnected-tripod-image {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 100%
+    );
+  }
+
+  @media (min-width: 768px) {
+    .unconnected-tripod-image {
+      width: 80%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      -webkit-mask-image: linear-gradient(
+        to right,
+        black 0%,
+        black 78%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        black 0%,
+        black 78%,
+        transparent 100%
+      );
+    }
+  }
+</style>
